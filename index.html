@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElectrOriginc | Importamos Móvilidad - Tecnología - Innovación</title>
+  <title>ElectroOriginc | Importaciones Directas</title>
   <style>
-    /* VARIABLES DE COLOR OFICIALES */
+    /* =========================================
+       VARIABLES DE COLOR EXACTAS AL DISEÑO
+       ========================================= */
     :root {
-      --oscuro-principal: #0C134F;
-      --cian-brillante: #00FFFF; /* Turquesa/Cian oficial de ElectrOriginc */
-      --blanco: #F9F7F7;
-      --gris-suave: #CBD5E1;
-      --cian-detalle: #00A3CC;
-      --negro-tarjetas: #1A1A40;
-      --naranja-acento: #FF7300;
-      --sombra: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --bg-dark: #071022;        /* Azul marino extra oscuro del fondo */
+      --bg-header: #0A142F;      /* Azul del menú superior */
+      --cyan: #00D2FF;           /* Cian brillante del logo y barra de rastreo */
+      --orange: #FF7A00;         /* Naranja vibrante de los botones */
+      --white: #FFFFFF;
+      --text-muted: #A0ABC0;
+      --card-bg: #FFFFFF;        /* Fondo blanco para las tarjetas del catálogo */
+      --card-text: #071022;      /* Texto oscuro para leerse sobre blanco */
+      --sombra: 0 8px 20px rgba(0, 0, 0, 0.15);
       --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -26,8 +29,8 @@
     }
 
     body {
-      background-color: var(--oscuro-principal);
-      color: var(--blanco);
+      background-color: var(--bg-dark);
+      color: var(--white);
       line-height: 1.6;
     }
 
@@ -38,16 +41,16 @@
     }
 
     /* =========================================
-       1. HEADER (Cabecera Fija)
+       1. HEADER (Idéntico a la imagen)
        ========================================= */
     header {
-      background-color: rgba(12, 19, 79, 0.95);
+      background-color: var(--bg-header);
       padding: 15px 0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      border-bottom: 2px solid var(--cian-brillante);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .nav-container {
@@ -65,9 +68,10 @@
     }
 
     .logo-text {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      color: var(--cian-brillante);
+      color: var(--cyan);
+      letter-spacing: 1px;
     }
 
     nav ul {
@@ -77,51 +81,47 @@
     }
 
     nav a {
-      color: var(--blanco);
+      color: var(--white);
       text-decoration: none;
-      font-weight: 500;
+      font-size: 0.95rem;
       transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--cian-brillante);
+      color: var(--cyan);
     }
 
-    .btn-header-wa {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: transparent;
-      color: var(--cian-brillante);
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid var(--cian-brillante);
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-    .btn-header-wa:hover {
-      background-color: var(--cian-brillante);
-      color: var(--oscuro-principal);
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--white);
+      font-size: 1.2rem;
     }
 
-    /* Botón Hamburguesa */
+    .header-icons span { cursor: pointer; transition: color 0.3s; }
+    .header-icons span:hover { color: var(--cyan); }
+
+    /* Botón Hamburguesa Móvil */
     .menu-toggle {
       display: none;
       background: none;
       border: none;
-      color: var(--cian-brillante);
+      color: var(--cyan);
       font-size: 2rem;
       cursor: pointer;
     }
 
     /* =========================================
-       2. HERO SECTION - CARRUSEL
+       2. HERO SECTION (Banner Principal)
        ========================================= */
     .hero-carousel {
-      padding: 120px 0 60px;
+      padding: 140px 0 80px;
       position: relative;
       overflow: hidden;
-      height: 80vh;
-      min-height: 500px;
+      height: 85vh;
+      min-height: 550px;
+      border-bottom: 2px solid rgba(255,255,255,0.05);
     }
 
     .carousel-inner {
@@ -138,378 +138,27 @@
       background-position: center;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      text-align: left; /* Alineado a la izquierda como en la imagen */
     }
 
     .carousel-content {
-      max-width: 800px;
+      max-width: 700px;
       padding: 0 40px;
     }
 
     .carousel-item h1 {
-      font-size: 3.8rem;
-      margin-bottom: 25px;
-      color: var(--blanco);
-      line-height: 1.2;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      color: var(--white);
+      line-height: 1.1;
+      font-weight: 700;
     }
 
     .carousel-item p {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 40px;
-      color: var(--blanco);
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+      color: var(--text-muted);
+      font-weight: 300;
     }
 
-    /* Imágenes de alta calidad del carrusel */
-    .item-1 { background-image: linear-gradient(rgba(12, 19, 79, 0.6), rgba(12, 19, 79, 0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop'); }
-    .item-2 { background-image: linear-gradient(rgba(12, 19, 79, 0.6), rgba(12, 19, 79, 0.6)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop'); }
-    .item-3 { background-image: linear-gradient(rgba(12, 19, 79, 0.6), rgba(12, 19, 79, 0.6)), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1920&auto=format&fit=crop'); }
-
-    .btn-main {
-      display: inline-block;
-      padding: 18px 35px;
-      background-color: var(--cian-brillante);
-      color: var(--oscuro-principal);
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      box-shadow: var(--sombra);
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .btn-main:hover {
-      background-color: var(--blanco);
-      transform: translateY(-3px);
-    }
-
-    .carousel-control-prev, .carousel-control-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.3);
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 5px;
-    }
-    .carousel-control-prev { left: 10px; }
-    .carousel-control-next { right: 10px; }
-
-    .carousel-indicators {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-    .carousel-dot {
-      width: 12px;
-      height: 12px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .carousel-dot.active { background-color: var(--cian-brillante); }
-
-    /* =========================================
-       3. CATALOGO (7 Categorías Específicas)
-       ========================================= */
-    .catalogo { padding: 100px 0; }
-    .catalogo h2 { text-align: center; font-size: 2.8rem; margin-bottom: 60px; color: var(--blanco); }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-    .product-card {
-      background-color: var(--negro-tarjetas);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: var(--sombra);
-      text-align: center;
-      transition: transform 0.3s;
-      border: 2px solid transparent;
-    }
-    .product-card:hover { transform: translateY(-10px); border-color: var(--cian-brillante); }
-    .product-card img { max-width: 100%; height: 220px; object-fit: cover; border-radius: 5px; margin-bottom: 25px; }
-    .product-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--blanco); }
-    .product-card p { font-size: 1.1rem; color: var(--gris-suave); margin-bottom: 30px; min-height: 50px; }
-
-    .card-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-    .btn-card { display: inline-block; padding: 12px 15px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: all 0.3s; width: 100%; max-width: 200px; }
-    .btn-detalles { background-color: transparent; color: var(--cian-detalle); border: 2px solid var(--cian-detalle); }
-    .btn-detalles:hover { background-color: var(--cian-detalle); color: var(--blanco); }
-    .btn-wa-card { background-color: var(--cian-detalle); color: var(--blanco); }
-    .btn-wa-card:hover { background-color: var(--blanco); color: var(--cian-detalle); }
-
-    /* =========================================
-       4. IMPORTACIÓN PERSONALIZADA
-       ========================================= */
-    .importacion-personalizada { padding: 60px 0; background-color: rgba(12, 19, 79, 0.9); text-align: center; }
-    .importacion-personalizada h3 { font-size: 2.2rem; margin-bottom: 20px; color: var(--blanco); }
-    .importacion-personalizada p { font-size: 1.3rem; margin-bottom: 40px; color: var(--gris-suave); }
-    .btn-personalizado { display: inline-block; padding: 18px 35px; background-color: var(--naranja-acento); color: var(--blanco); text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s, transform 0.2s; }
-    .btn-personalizado:hover { background-color: #e66600; transform: translateY(-3px); }
-
-    /* =========================================
-       5. TRACKING BAR
-       ========================================= */
-    .tracking { padding: 80px 0; background-color: var(--cian-brillante); color: var(--oscuro-principal); text-align: center; }
-    .tracking h2 { font-size: 2.8rem; margin-bottom: 30px; color: var(--oscuro-principal); }
-    .tracking-form { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
-    .tracking-input { padding: 15px; width: 100%; max-width: 350px; border: 2px solid var(--oscuro-principal); border-radius: 5px; font-size: 1.1rem; }
-    .btn-track { padding: 15px 30px; background-color: var(--oscuro-principal); color: var(--cian-brillante); border: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
-    .btn-track:hover { background-color: #1A1A40; }
-    .tracking-steps { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; font-size: 1.2rem; font-weight: bold; }
-
-    /* =========================================
-       6. CONTACTO & FOOTER
-       ========================================= */
-    .contacto { padding: 100px 0; }
-    .contacto h2 { text-align: center; font-size: 2.8rem; margin-bottom: 40px; color: var(--blanco); }
-    .contact-details { text-align: center; font-size: 1.2rem; color: var(--gris-suave); }
-    .contact-details p { margin-bottom: 15px; }
-    .contact-details a { color: var(--cian-brillante); text-decoration: none; font-weight: bold; }
-    footer { background-color: rgba(12, 19, 79, 0.95); padding: 30px 0; text-align: center; color: var(--gris-suave); border-top: 1px solid var(--cian-brillante); }
-
-    /* =========================================
-       ADAPTACIÓN A CELULARES
-       ========================================= */
-    @media (max-width: 768px) {
-      .logo-text { font-size: 1.4rem; }
-      .menu-toggle { display: block; }
-      nav, .btn-header-wa { display: none; width: 100%; }
-      nav.active { display: block; }
-      .btn-header-wa.active { display: inline-block; text-align: center; margin-top: 15px; }
-      nav ul { flex-direction: column; gap: 15px; text-align: center; padding: 20px 0 0 0; }
-      .carousel-item h1 { font-size: 2.2rem; }
-      .carousel-item p { font-size: 1.2rem; margin-bottom: 20px; }
-      .hero-carousel { height: 75vh; min-height: 400px; padding: 100px 0 40px; }
-      .tracking-steps p { text-align: center; }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="container nav-container">
-      <a href="#" class="logo-container">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="48" height="48">
-          <path d="M 50 10 A 40 40 0 1 1 50 90 A 40 40 0 1 1 50 10 Z M 55 22 A 28 28 0 1 0 55 78 A 28 28 0 1 0 55 22 Z" fill="var(--cian-brillante)"/>
-          <path d="M 8 55 C 20 85 75 90 95 45" fill="none" stroke="var(--cian-brillante)" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="85" cy="22" r="6" fill="var(--cian-brillante)"/>
-        </svg>
-
-        <span class="logo-text">ELECTR ORIGINC</span>
-      </a>
-      
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-      <nav id="mobile-menu">
-        <ul>
-          <li><a href="#catalogo" onclick="toggleMenu()">Catálogo</a></li>
-          <li><a href="#tracking" onclick="toggleMenu()">Tracking</a></li>
-          <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
-        </ul>
-      </nav>
-      <a href="https://wa.me/50672429342?text=Hola,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="btn-header-wa" id="mobile-wa">
-        💬 Asesor: +506 72429342
-      </a>
-    </div>
-  </header>
-
-  <section class="hero-carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item item-1">
-        <div class="carousel-content container">
-          <h1>Importaciones directas</h1>
-          <p>Movilidad - Tecnología - Innovación.</p>
-          <a href="#catalogo" class="btn-main">Explorar Catálogo Disponible</a>
-        </div>
-      </div>
-      <div class="carousel-item item-2">
-        <div class="carousel-content container">
-          <h1>Casas Modulares Inteligentes</h1>
-          <p>Innovación habitacional con integración domótica total y diseño premium en Costa Rica.</p>
-          <a href="#catalogo" class="btn-main">Ver Viviendas Disponibles</a>
-        </div>
-      </div>
-      <div class="carousel-item item-3">
-        <div class="carousel-content container">
-          <h1>Vehículos Avanzados</h1>
-          <p>Autonomía extendida y la última tecnología en movilidad para Costa Rica.</p>
-          <a href="#catalogo" class="btn-main">Ver Modelos</a>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
-    <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
-    <div class="carousel-indicators">
-      <span class="carousel-dot active" onclick="setSlide(0)"></span>
-      <span class="carousel-dot" onclick="setSlide(1)"></span>
-      <span class="carousel-dot" onclick="setSlide(2)"></span>
-    </div>
-  </section>
-
-  <section id="catalogo" class="catalogo">
-    <div class="container">
-      <h2>Catálogo de Soluciones Sostenibles</h2>
-      <div class="product-grid">
-        
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=600&auto=format&fit=crop" alt="Vehículos Eléctricos ElectrOriginc">
-          <h3>Vehículos Eléctricos</h3>
-          <p>La máxima autonomía sin emisiones. Tecnología de vanguardia para movilidad pura.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Eléctrico" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=600&auto=format&fit=crop" alt="Vehículos Híbridos ElectrOriginc">
-          <h3>Vehículos Híbridos</h3>
-          <p>El balance perfecto entre eficiencia eléctrica y potencia de combustión prolongada.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Híbrido" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" alt="Vehículos de Combustión ElectrOriginc">
-          <h3>Vehículos de Combustión</h3>
-          <p>Potencia, rendimiento tradicional y fiabilidad de las mejores marcas globales.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20de%20Combustión" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600&auto=format&fit=crop" alt="Casas Modulares Inteligentes ElectrOriginc">
-          <h3>Casas Modulares Inteligentes</h3>
-          <p>Viviendas prefabricadas de lujo con domótica integrada y rápida instalación.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20una%20Casa%20Modular%20Inteligente" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=600&auto=format&fit=crop" alt="Cargadores y Estaciones Eléctricas ElectrOriginc">
-          <h3>Cargadores y Estaciones</h3>
-          <p>Wallbox residenciales e infraestructura de carga rápida para tu independencia energética.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Cargadores%20o%20Estaciones%20Eléctricas" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?q=80&w=600&auto=format&fit=crop" alt="Equipo Médico ElectrOriginc">
-          <h3>Equipo Médico</h3>
-          <p>Importación de maquinaria hospitalaria, monitores y tecnología de diagnóstico de precisión.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Médico" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop" alt="Equipo Industrial ElectrOriginc">
-          <h3>Equipo Industrial</h3>
-          <p>Maquinaria pesada, automatización y herramientas de alto rendimiento para la industria.</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Industrial" target="_blank" class="btn-card btn-wa-card">WhatsApp</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="importacion-personalizada">
-    <div class="container">
-      <h3>¿No encuentras lo que buscas?</h3>
-      <p>Servicio de Importación Personalizada. Cuéntanos qué necesitas y lo traemos directo para ti.</p>
-      <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20pedido%20especial" target="_blank" class="btn-personalizado">Solicitar Cotización Especial</a>
-    </div>
-  </section>
-
-  <section id="tracking" class="tracking">
-    <div class="container tracking-container">
-      <h2>Rastrea Tu Envío Internacional</h2>
-      <div class="tracking-form">
-        <input type="text" placeholder="Ingrese guía o contenedor..." class="tracking-input">
-        <button class="btn-track">Rastrear</button>
-      </div>
-      <div class="tracking-steps">
-        <p>1. Pedido ➔ 2. Carga ➔ 3. Aduanas ➔ 4. Entrega</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="contacto">
-    <div class="container contact-container">
-      <h2>Contáctanos</h2>
-      <div class="contact-details">
-        <p><strong>Ubicación Oficinas:</strong> Paseo de las Flores, Heredia</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/50672429342" target="_blank">+506 72429342</a></p>
-        <p><strong>Correo:</strong> <a href="mailto:info@electroriginc.cr">info@electroriginc.cr</a></p>
-        <p><strong>Atención:</strong> Agente Ejecutivo Comercial</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados. | San José - Heredia, Costa Rica</p>
-    </div>
-  </footer>
-
-  <script>
-    // Menú Móvil
-    function toggleMenu() {
-      if (window.innerWidth <= 768) {
-        document.getElementById('mobile-menu').classList.toggle('active');
-        document.getElementById('mobile-wa').classList.toggle('active');
-      }
-    }
-
-    // Carrusel
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const totalSlides = slides.length;
-    let autoSlideTimer;
-
-    function showSlide(index) {
-      if (index >= totalSlides) { currentSlide = 0; } 
-      else if (index < 0) { currentSlide = totalSlides - 1; } 
-      else { currentSlide = index; }
-      
-      const carouselInner = document.querySelector('.carousel-inner');
-      carouselInner.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
-      
-      dots.forEach((dot, i) => { dot.classList.toggle('active', i === currentSlide); });
-      startAutoSlide();
-    }
-
-    function nextSlide() { showSlide(currentSlide + 1); }
-    function prevSlide() { showSlide(currentSlide - 1); }
-    function setSlide(index) { showSlide(index); }
-    function startAutoSlide() {
-      if (autoSlideTimer) { clearInterval(autoSlideTimer); }
-      autoSlideTimer = setInterval(nextSlide, 6000);
-    }
-    
-    startAutoSlide();
-  </script>
-
-</body>
-</html>
+    /* Degrad
