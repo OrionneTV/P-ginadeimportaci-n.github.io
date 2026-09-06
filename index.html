@@ -6,12 +6,12 @@
   <title>ElectrOriginc | Importaciones Directas</title>
   <style>
     /* =========================================
-       VARIABLES EXACTAS AL DISEÑO (SCREENSHOT)
+       VARIABLES EXACTAS AL DISEÑO 
        ========================================= */
     :root {
-      --bg-dark: #071527;        /* Azul marino muy oscuro (Header, Hero, Custom Order) */
-      --cyan: #00E5FF;           /* Cian brillante (Logo, Barra de Tracking, Botón 1) */
-      --orange: #F57C00;         /* Naranja (Botones secundarios, Botones de tarjetas) */
+      --bg-dark: #071527;        
+      --cyan: #00E5FF;           
+      --orange: #F57C00;         
       --white: #FFFFFF;
       --text-muted: #94A3B8;
       --card-bg: #FFFFFF;
@@ -28,7 +28,7 @@
     }
 
     body {
-      background-color: var(--white); /* El fondo principal del catálogo es blanco */
+      background-color: var(--white);
       color: var(--text-dark);
       line-height: 1.6;
     }
@@ -40,7 +40,7 @@
     }
 
     /* =========================================
-       1. HEADER (Cinta superior oscura)
+       1. HEADER 
        ========================================= */
     header {
       background-color: var(--bg-dark);
@@ -71,6 +71,10 @@
       font-weight: 700;
       color: var(--cyan);
       letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      color: var(--white);
     }
 
     nav ul {
@@ -106,7 +110,6 @@
     }
     .header-icons a:hover { color: var(--cyan); }
 
-    /* Botón Hamburguesa Móvil */
     .menu-toggle {
       display: none;
       background: none;
@@ -117,7 +120,7 @@
     }
 
     /* =========================================
-       2. HERO SECTION (Banner principal oscuro)
+       2. HERO SECTION 
        ========================================= */
     .hero-carousel {
       padding: 140px 0 80px;
@@ -142,7 +145,7 @@
       background-position: center;
       display: flex;
       align-items: center;
-      text-align: left; /* Alineado a la izquierda según imagen */
+      text-align: left; 
     }
 
     .carousel-content {
@@ -166,7 +169,6 @@
       opacity: 0.9;
     }
 
-    /* Degradado idéntico al de la imagen (Oscuro a la izquierda, desvanecido a la derecha) */
     .item-1 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop'); }
     .item-2 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop'); }
     .item-3 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1920&auto=format&fit=crop'); }
@@ -192,7 +194,7 @@
     .btn-orange { background-color: var(--orange); color: var(--white); }
 
     /* =========================================
-       3. CATÁLOGO (Fondo Blanco, Tarjetas limpias)
+       3. CATÁLOGO (Las 3 categorías solicitadas)
        ========================================= */
     .catalogo-section {
       background-color: var(--white);
@@ -207,18 +209,20 @@
       font-weight: 700;
     }
 
-    /* Grid de 4 columnas idéntico a la foto */
     .product-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: 25px; 
+      /* Ajustado para centrar 3 tarjetas perfectas */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 30px; 
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .product-card {
       background-color: var(--white);
-      border: 1px solid #E2E8F0; /* Borde muy sutil gris claro */
+      border: 1px solid #E2E8F0; 
       border-radius: 12px;
-      padding: 25px 20px;
+      padding: 25px 15px;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
       display: flex;
@@ -232,45 +236,46 @@
       border-color: var(--cyan);
     }
 
-    /* Estilo de las imágenes en las tarjetas (como iconos grandes) */
     .product-card img { 
       width: 100%;
-      height: 140px; 
+      height: 160px; 
       object-fit: contain; 
       margin-bottom: 20px; 
     }
 
     .product-card h3 { 
-      font-size: 1.2rem; 
+      font-size: 1.25rem; 
       margin-bottom: 10px; 
       color: var(--text-dark);
       font-weight: 700;
     }
 
     .product-card p { 
-      font-size: 0.9rem; 
+      font-size: 0.95rem; 
       color: #64748B; 
       margin-bottom: 25px; 
       line-height: 1.4;
-      flex-grow: 1; /* Empuja el botón hacia abajo */
+      flex-grow: 1; 
     }
 
+    /* Botón adaptado para el texto requerido */
     .btn-card {
       background-color: var(--orange);
       color: var(--white);
-      padding: 10px 30px;
+      padding: 12px 20px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
+      line-height: 1.2;
       transition: opacity 0.3s;
       width: 100%;
-      max-width: 180px;
+      max-width: 250px;
     }
     .btn-card:hover { opacity: 0.8; }
 
     /* =========================================
-       4. IMPORTACIÓN PERSONALIZADA (Fondo Oscuro)
+       4. IMPORTACIÓN PERSONALIZADA 
        ========================================= */
     .importacion-personalizada { 
       padding: 50px 0; 
@@ -282,7 +287,7 @@
     .importacion-personalizada p { font-size: 1rem; color: var(--text-muted); margin-bottom: 25px; }
 
     /* =========================================
-       5. TRACKING BAR (Barra Cian Sólida)
+       5. TRACKING BAR 
        ========================================= */
     .tracking { 
       padding: 30px 0 40px; 
@@ -355,7 +360,6 @@
       nav, .header-icons { display: none; width: 100%; }
       nav.active { display: block; }
       nav ul { flex-direction: column; gap: 15px; text-align: center; padding: 20px 0; }
-      
       .carousel-item h1 { font-size: 2.2rem; }
       .carousel-item p { font-size: 1.1rem; }
       .hero-carousel { height: 60vh; min-height: 450px; padding: 100px 0; }
@@ -367,15 +371,17 @@
 </head>
 <body>
 
+  <!-- 1. HEADER EXACTO -->
   <header>
     <div class="container nav-container">
       <a href="#" class="logo-container">
+        <!-- Logo SVG Orbital Actualizado -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="38" height="38">
-          <circle cx="50" cy="50" r="35" fill="none" stroke="var(--cyan)" stroke-width="6"/>
-          <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="var(--cyan)" stroke-width="3" transform="rotate(-30 50 50)"/>
-          <circle cx="85" cy="30" r="5" fill="var(--cyan)"/>
+          <path d="M 50 10 A 40 40 0 1 1 50 90 A 40 40 0 1 1 50 10 Z M 55 22 A 28 28 0 1 0 55 78 A 28 28 0 1 0 55 22 Z" fill="var(--cyan)"/>
+          <path d="M 8 55 C 20 85 75 90 95 45" fill="none" stroke="var(--cyan)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="85" cy="22" r="6" fill="var(--cyan)"/>
         </svg>
-        <span class="logo-text">ElectrOriginc</span>
+        <span class="logo-text">Electr<span>Originc</span></span>
       </a>
       
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -398,6 +404,7 @@
     </div>
   </header>
 
+  <!-- 2. HERO SECTION -->
   <section class="hero-carousel">
     <div class="carousel-inner">
       <div class="carousel-item item-1">
@@ -433,64 +440,41 @@
     </div>
   </section>
 
+  <!-- 3. CATÁLOGO FONDO BLANCO (Las 3 categorías solicitadas) -->
   <section id="catalogo" class="catalogo-section">
     <div class="container">
       <h2>Catálogo de Soluciones Sostenibles</h2>
       <div class="product-grid">
         
+        <!-- 1. Vehículos Híbridos y eléctricos -->
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Sleek EV Sedan">
-          <h3>Vehículos Eléctricos</h3>
-          <p>La máxima autonomía sin emisiones. Tecnología de vanguardia.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Eléctrico" target="_blank" class="btn-card">Ver Catálogo</a>
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Vehículos Híbridos y Eléctricos">
+          <h3>Vehículos Híbridos y eléctricos</h3>
+          <p>Vehículos de última generación con máxima eficiencia, autonomía y diseño aerodinámico.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20Vehículos%20Híbridos%20y%20eléctricos" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
+        <!-- 2. Smarthome casas modulares -->
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=400&auto=format&fit=crop" alt="Vehículos Híbridos">
-          <h3>Vehículos Híbridos</h3>
-          <p>El balance perfecto entre eficiencia eléctrica y combustión.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Híbrido" target="_blank" class="btn-card">Ver Catálogo</a>
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Smarthome Casas Modulares">
+          <h3>Smarthome casas modulares</h3>
+          <p>Viviendas prefabricadas de lujo con integración domótica total, paneles de cristal y rápida instalación.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20una%20Smarthome%20casa%20modular" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
+        <!-- 3. Estaciones y cargadores eléctricos -->
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=400&auto=format&fit=crop" alt="Vehículos de Combustión">
-          <h3>Vehículos Combustión</h3>
-          <p>Potencia, rendimiento tradicional y fiabilidad global.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20de%20Combustión" target="_blank" class="btn-card">Ver Catálogo</a>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Smart Modular Home">
-          <h3>Smart Modular Home</h3>
-          <p>Viviendas prefabricadas de lujo con domótica integrada.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20una%20Casa%20Modular" target="_blank" class="btn-card">Ver Catálogo</a>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Dual Wallbox EV Charger">
-          <h3>Dual Wallbox EV Charger</h3>
-          <p>Wallbox residenciales e infraestructura de carga rápida.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Estaciones%20Eléctricas" target="_blank" class="btn-card">Ver Catálogo</a>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?q=80&w=400&auto=format&fit=crop" alt="Equipo Médico">
-          <h3>Equipo Médico</h3>
-          <p>Importación de maquinaria y tecnología de diagnóstico.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Médico" target="_blank" class="btn-card">Ver Catálogo</a>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop" alt="Equipo Industrial">
-          <h3>Equipo Industrial</h3>
-          <p>Automatización y herramientas de alto rendimiento.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Industrial" target="_blank" class="btn-card">Ver Catálogo</a>
+          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Estaciones y Cargadores Eléctricos">
+          <h3>Estaciones y cargadores eléctricos</h3>
+          <p>Soluciones de carga rápida residenciales y comerciales para una movilidad 100% eléctrica y eficiente.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20Estaciones%20y%20cargadores%20eléctricos" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- 4. IMPORTACIÓN PERSONALIZADA -->
   <section class="importacion-personalizada">
     <div class="container">
       <h3>¿No encuentras lo que buscas?</h3>
@@ -499,6 +483,7 @@
     </div>
   </section>
 
+  <!-- 5. TRACKING BAR -->
   <section id="tracking" class="tracking">
     <div class="container">
       <h2>Rastrea Tu Envío Internacional</h2>
@@ -512,6 +497,7 @@
     </div>
   </section>
 
+  <!-- 6. CONTACTO & FOOTER -->
   <section id="contacto" class="contacto">
     <div class="container contact-grid">
       <div class="contact-item">
@@ -536,15 +522,14 @@
     </div>
   </footer>
 
+  <!-- SCRIPT PARA CARRUSEL Y MENÚ MÓVIL -->
   <script>
-    // Menú Móvil
     function toggleMenu() {
       if (window.innerWidth <= 768) {
         document.getElementById('mobile-menu').classList.toggle('active');
       }
     }
 
-    // Carrusel Automático
     let currentSlide = 0;
     const totalSlides = document.querySelectorAll('.carousel-item').length;
     
@@ -553,7 +538,6 @@
       document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
     }
 
-    // Temporizador de 6 segundos
     setInterval(() => showSlide(currentSlide + 1), 6000); 
   </script>
 
