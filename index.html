@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElectroOriginc | Importaciones Directas</title>
+  <title>ElectrOriginc | Importaciones Directas</title>
   <style>
     /* =========================================
-       VARIABLES DE COLOR EXACTAS AL DISEÑO
+       VARIABLES EXACTAS AL DISEÑO (SCREENSHOT)
        ========================================= */
     :root {
-      --bg-dark: #071022;        /* Azul marino extra oscuro del fondo */
-      --bg-header: #0A142F;      /* Azul del menú superior */
-      --cyan: #00D2FF;           /* Cian brillante del logo y barra de rastreo */
-      --orange: #FF7A00;         /* Naranja vibrante de los botones */
+      --bg-dark: #071527;        /* Azul marino muy oscuro (Header, Hero, Custom Order) */
+      --cyan: #00E5FF;           /* Cian brillante (Logo, Barra de Tracking, Botón 1) */
+      --orange: #F57C00;         /* Naranja (Botones secundarios, Botones de tarjetas) */
       --white: #FFFFFF;
-      --text-muted: #A0ABC0;
-      --card-bg: #FFFFFF;        /* Fondo blanco para las tarjetas del catálogo */
-      --card-text: #071022;      /* Texto oscuro para leerse sobre blanco */
-      --sombra: 0 8px 20px rgba(0, 0, 0, 0.15);
+      --text-muted: #94A3B8;
+      --card-bg: #FFFFFF;
+      --text-dark: #0F172A;
+      --sombra: 0 4px 15px rgba(0, 0, 0, 0.08);
       --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -29,8 +28,8 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--white);
+      background-color: var(--white); /* El fondo principal del catálogo es blanco */
+      color: var(--text-dark);
       line-height: 1.6;
     }
 
@@ -41,16 +40,16 @@
     }
 
     /* =========================================
-       1. HEADER (Idéntico a la imagen)
+       1. HEADER (Cinta superior oscura)
        ========================================= */
     header {
-      background-color: var(--bg-header);
+      background-color: var(--bg-dark);
       padding: 15px 0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .nav-container {
@@ -63,27 +62,28 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
     }
 
     .logo-text {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.6rem;
+      font-weight: 700;
       color: var(--cyan);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 30px;
     }
 
     nav a {
       color: var(--white);
       text-decoration: none;
       font-size: 0.95rem;
+      font-weight: 400;
       transition: color 0.3s;
     }
 
@@ -99,8 +99,12 @@
       font-size: 1.2rem;
     }
 
-    .header-icons span { cursor: pointer; transition: color 0.3s; }
-    .header-icons span:hover { color: var(--cyan); }
+    .header-icons a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .header-icons a:hover { color: var(--cyan); }
 
     /* Botón Hamburguesa Móvil */
     .menu-toggle {
@@ -113,15 +117,15 @@
     }
 
     /* =========================================
-       2. HERO SECTION (Banner Principal)
+       2. HERO SECTION (Banner principal oscuro)
        ========================================= */
     .hero-carousel {
       padding: 140px 0 80px;
       position: relative;
       overflow: hidden;
-      height: 85vh;
-      min-height: 550px;
-      border-bottom: 2px solid rgba(255,255,255,0.05);
+      height: 70vh;
+      min-height: 500px;
+      background-color: var(--bg-dark);
     }
 
     .carousel-inner {
@@ -138,11 +142,11 @@
       background-position: center;
       display: flex;
       align-items: center;
-      text-align: left; /* Alineado a la izquierda como en la imagen */
+      text-align: left; /* Alineado a la izquierda según imagen */
     }
 
     .carousel-content {
-      max-width: 700px;
+      max-width: 650px;
       padding: 0 40px;
     }
 
@@ -155,18 +159,18 @@
     }
 
     .carousel-item p {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-bottom: 40px;
-      color: var(--text-muted);
+      color: var(--white);
       font-weight: 300;
+      opacity: 0.9;
     }
 
-    /* Degradado oscuro para que el texto resalte igual que en la imagen */
-    .item-1 { background-image: linear-gradient(to right, rgba(7,16,34,0.95) 0%, rgba(7,16,34,0.4) 100%), url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop'); }
-    .item-2 { background-image: linear-gradient(to right, rgba(7,16,34,0.95) 0%, rgba(7,16,34,0.4) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop'); }
-    .item-3 { background-image: linear-gradient(to right, rgba(7,16,34,0.95) 0%, rgba(7,16,34,0.4) 100%), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1920&auto=format&fit=crop'); }
+    /* Degradado idéntico al de la imagen (Oscuro a la izquierda, desvanecido a la derecha) */
+    .item-1 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop'); }
+    .item-2 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop'); }
+    .item-3 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1920&auto=format&fit=crop'); }
 
-    /* Botones estilo Píldora del Banner */
     .hero-buttons {
       display: flex;
       gap: 15px;
@@ -178,136 +182,122 @@
       padding: 12px 30px;
       text-decoration: none;
       font-weight: 600;
-      border-radius: 50px; /* Forma de píldora idéntica a la imagen */
-      transition: transform 0.2s, opacity 0.3s;
+      border-radius: 50px;
       font-size: 1rem;
+      transition: transform 0.2s, opacity 0.3s;
     }
     .btn-pill:hover { transform: translateY(-2px); opacity: 0.9; }
     
     .btn-cyan { background-color: var(--cyan); color: var(--bg-dark); }
     .btn-orange { background-color: var(--orange); color: var(--white); }
 
-    /* Controles Carrusel */
-    .carousel-indicators {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-    }
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .carousel-dot.active { background-color: var(--cyan); }
-
     /* =========================================
-       3. CATÁLOGO (Fondo Blanco, Tarjetas Limpias)
+       3. CATÁLOGO (Fondo Blanco, Tarjetas limpias)
        ========================================= */
     .catalogo-section {
       background-color: var(--white);
       padding: 80px 0;
-      color: var(--card-text);
     }
 
     .catalogo-section h2 {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 50px;
-      color: var(--card-text);
+      color: var(--text-dark);
       font-weight: 700;
     }
 
+    /* Grid de 4 columnas idéntico a la foto */
     .product-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-      gap: 30px; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 25px; 
     }
 
     .product-card {
       background-color: var(--white);
-      border: 1px solid #E2E8F0;
+      border: 1px solid #E2E8F0; /* Borde muy sutil gris claro */
       border-radius: 12px;
-      padding: 20px;
+      padding: 25px 20px;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .product-card:hover { 
       transform: translateY(-5px); 
       box-shadow: var(--sombra); 
+      border-color: var(--cyan);
     }
 
-    /* Imágenes adaptadas para lucir más limpias (estilo icono/vector) */
+    /* Estilo de las imágenes en las tarjetas (como iconos grandes) */
     .product-card img { 
-      width: 100%; 
-      height: 160px; 
-      object-fit: contain; /* Para que la imagen no se recorte y luzca centrada */
+      width: 100%;
+      height: 140px; 
+      object-fit: contain; 
       margin-bottom: 20px; 
-      background-color: #F8FAFC;
-      border-radius: 8px;
-      padding: 10px;
     }
 
     .product-card h3 { 
-      font-size: 1.3rem; 
+      font-size: 1.2rem; 
       margin-bottom: 10px; 
+      color: var(--text-dark);
       font-weight: 700;
     }
 
     .product-card p { 
-      font-size: 0.95rem; 
+      font-size: 0.9rem; 
       color: #64748B; 
       margin-bottom: 25px; 
-      min-height: 45px; 
+      line-height: 1.4;
+      flex-grow: 1; /* Empuja el botón hacia abajo */
     }
 
-    .btn-card-orange {
+    .btn-card {
       background-color: var(--orange);
       color: var(--white);
-      padding: 10px 25px;
+      padding: 10px 30px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      display: inline-block;
       transition: opacity 0.3s;
+      width: 100%;
+      max-width: 180px;
     }
-    .btn-card-orange:hover { opacity: 0.8; }
+    .btn-card:hover { opacity: 0.8; }
 
     /* =========================================
-       4. IMPORTACIÓN PERSONALIZADA (Fondo Azul Oscuro)
+       4. IMPORTACIÓN PERSONALIZADA (Fondo Oscuro)
        ========================================= */
     .importacion-personalizada { 
-      padding: 60px 0; 
+      padding: 50px 0; 
       background-color: var(--bg-dark); 
       text-align: center; 
+      color: var(--white);
     }
-    .importacion-personalizada h3 { font-size: 1.8rem; margin-bottom: 15px; }
-    .importacion-personalizada p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+    .importacion-personalizada h3 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+    .importacion-personalizada p { font-size: 1rem; color: var(--text-muted); margin-bottom: 25px; }
 
     /* =========================================
        5. TRACKING BAR (Barra Cian Sólida)
        ========================================= */
     .tracking { 
-      padding: 40px 0; 
+      padding: 30px 0 40px; 
       background-color: var(--cyan); 
       color: var(--bg-dark); 
       text-align: center; 
     }
-    .tracking h2 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 700;}
+    .tracking h2 { font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; color: var(--bg-dark); }
     
     .tracking-form { 
       display: flex; 
       justify-content: center; 
-      flex-wrap: wrap; 
-      gap: 15px; 
-      margin-bottom: 20px; 
+      align-items: center;
+      gap: 10px; 
+      margin-bottom: 15px; 
     }
     .tracking-input { 
       padding: 12px 20px; 
@@ -317,47 +307,61 @@
       border-radius: 50px; 
       font-size: 1rem; 
       outline: none;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .tracking-steps { 
       display: flex; 
       justify-content: center; 
-      flex-wrap: wrap; 
-      gap: 10px; 
-      font-size: 1rem; 
+      font-size: 0.95rem; 
       font-weight: 600; 
+      color: var(--bg-dark);
+      opacity: 0.8;
     }
 
     /* =========================================
        6. CONTACTO & FOOTER
        ========================================= */
-    .contacto { padding: 60px 0; background-color: var(--bg-header); }
-    .contact-details { text-align: center; font-size: 1.1rem; color: var(--text-muted); }
-    .contact-details p { margin-bottom: 10px; }
-    .contact-details a { color: var(--cyan); text-decoration: none; font-weight: bold; }
+    .contacto { 
+      padding: 40px 0 20px; 
+      background-color: var(--bg-dark); 
+      color: var(--white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 30px;
+    }
+    .contact-item h4 { color: var(--cyan); margin-bottom: 10px; }
+    .contact-item p, .contact-item a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
     
     footer { 
       background-color: var(--bg-dark); 
-      padding: 25px 0; 
+      padding: 20px 0; 
       text-align: center; 
       color: #4A5568; 
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     /* =========================================
        ADAPTACIÓN A CELULARES
        ========================================= */
     @media (max-width: 768px) {
+      .logo-text { font-size: 1.4rem; }
       .menu-toggle { display: block; }
       nav, .header-icons { display: none; width: 100%; }
       nav.active { display: block; }
       nav ul { flex-direction: column; gap: 15px; text-align: center; padding: 20px 0; }
       
-      .carousel-item h1 { font-size: 2.5rem; }
-      .carousel-item p { font-size: 1.2rem; }
-      .hero-carousel { height: 70vh; min-height: 450px; padding: 100px 0; }
+      .carousel-item h1 { font-size: 2.2rem; }
+      .carousel-item p { font-size: 1.1rem; }
+      .hero-carousel { height: 60vh; min-height: 450px; padding: 100px 0; }
       .hero-buttons { justify-content: center; }
       .carousel-content { text-align: center; padding: 0 20px; }
+      .tracking-form { flex-direction: column; padding: 0 20px; }
     }
   </style>
 </head>
@@ -366,12 +370,12 @@
   <header>
     <div class="container nav-container">
       <a href="#" class="logo-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="35" height="35">
-          <path d="M 50 10 A 40 40 0 1 1 50 90 A 40 40 0 1 1 50 10 Z M 55 22 A 28 28 0 1 0 55 78 A 28 28 0 1 0 55 22 Z" fill="var(--cyan)"/>
-          <path d="M 8 55 C 20 85 75 90 95 45" fill="none" stroke="var(--cyan)" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="85" cy="22" r="6" fill="var(--cyan)"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="38" height="38">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="var(--cyan)" stroke-width="6"/>
+          <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="var(--cyan)" stroke-width="3" transform="rotate(-30 50 50)"/>
+          <circle cx="85" cy="30" r="5" fill="var(--cyan)"/>
         </svg>
-        <span class="logo-text">ElectroOriginc</span>
+        <span class="logo-text">ElectrOriginc</span>
       </a>
       
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -380,16 +384,16 @@
         <ul>
           <li><a href="#catalogo" onclick="toggleMenu()">Inicio</a></li>
           <li><a href="#catalogo" onclick="toggleMenu()">Catálogo</a></li>
-          <li><a href="#tracking" onclick="toggleMenu()">Movilidad</a></li>
+          <li><a href="#catalogo" onclick="toggleMenu()">Movilidad</a></li>
           <li><a href="#tracking" onclick="toggleMenu()">Tracking</a></li>
           <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
         </ul>
       </nav>
       
       <div class="header-icons">
-        <span title="Buscar">🔍</span>
-        <a href="https://wa.me/50672429342" target="_blank" style="text-decoration:none; color:inherit;" title="WhatsApp">📞</a>
-        <span title="Carrito">🛒</span>
+        <a href="#" title="Buscar">🔍</a>
+        <a href="#" title="Usuario">👤</a>
+        <a href="https://wa.me/50672429342" target="_blank" title="WhatsApp Pedidos">🛒</a>
       </div>
     </div>
   </header>
@@ -427,12 +431,6 @@
         </div>
       </div>
     </div>
-    
-    <div class="carousel-indicators">
-      <span class="carousel-dot active" onclick="setSlide(0)"></span>
-      <span class="carousel-dot" onclick="setSlide(1)"></span>
-      <span class="carousel-dot" onclick="setSlide(2)"></span>
-    </div>
   </section>
 
   <section id="catalogo" class="catalogo-section">
@@ -441,52 +439,52 @@
       <div class="product-grid">
         
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Vehículos Eléctricos">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Sleek EV Sedan">
           <h3>Vehículos Eléctricos</h3>
-          <p>Autonomía sin emisiones. Tecnología de vanguardia.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Eléctrico" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <p>La máxima autonomía sin emisiones. Tecnología de vanguardia.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Eléctrico" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
         <div class="product-card">
           <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=400&auto=format&fit=crop" alt="Vehículos Híbridos">
           <h3>Vehículos Híbridos</h3>
-          <p>Balance entre eficiencia eléctrica y combustión.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Híbrido" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <p>El balance perfecto entre eficiencia eléctrica y combustión.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Híbrido" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
         <div class="product-card">
           <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=400&auto=format&fit=crop" alt="Vehículos de Combustión">
           <h3>Vehículos Combustión</h3>
-          <p>Potencia y fiabilidad de marcas globales.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20de%20Combustión" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <p>Potencia, rendimiento tradicional y fiabilidad global.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20de%20Combustión" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Casas Modulares">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Smart Modular Home">
           <h3>Smart Modular Home</h3>
-          <p>Viviendas prefabricadas con domótica integrada.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20una%20Casa%20Modular" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <p>Viviendas prefabricadas de lujo con domótica integrada.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20una%20Casa%20Modular" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Cargadores">
-          <h3>Estaciones de Carga</h3>
-          <p>Wallbox residenciales e infraestructura rápida.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Estaciones%20Eléctricas" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Dual Wallbox EV Charger">
+          <h3>Dual Wallbox EV Charger</h3>
+          <p>Wallbox residenciales e infraestructura de carga rápida.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Estaciones%20Eléctricas" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
         <div class="product-card">
           <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?q=80&w=400&auto=format&fit=crop" alt="Equipo Médico">
           <h3>Equipo Médico</h3>
-          <p>Importación de tecnología de diagnóstico de precisión.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Médico" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <p>Importación de maquinaria y tecnología de diagnóstico.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Médico" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
         <div class="product-card">
           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop" alt="Equipo Industrial">
           <h3>Equipo Industrial</h3>
           <p>Automatización y herramientas de alto rendimiento.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Industrial" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Industrial" target="_blank" class="btn-card">Ver Catálogo</a>
         </div>
 
       </div>
@@ -509,24 +507,32 @@
         <button class="btn-pill btn-orange" style="border:none; cursor:pointer;">Rastrear</button>
       </div>
       <div class="tracking-steps">
-        <p>1. Pedido ➔ 2. Carga ➔ 3. Aduanas ➔ 4. Entrega</p>
+        <p>1. Pedido ➔ 2. Carga ➔ 3. Aduanas ➔ 4. Entregas</p>
       </div>
     </div>
   </section>
 
   <section id="contacto" class="contacto">
-    <div class="container">
-      <div class="contact-details">
-        <p><strong>📍 Ubicación Oficinas:</strong> Paseo de las Flores, Heredia</p>
-        <p><strong>📞 Atención:</strong> Agente Ejecutivo Comercial</p>
-        <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/50672429342" target="_blank">+506 72429342</a></p>
+    <div class="container contact-grid">
+      <div class="contact-item">
+        <h4>Ubicación</h4>
+        <p>Paseo de las Flores, Heredia</p>
+      </div>
+      <div class="contact-item">
+        <h4>Contacto Directo</h4>
+        <a href="https://wa.me/50672429342" target="_blank">+506 72429342</a><br>
+        <a href="mailto:info@electroriginc.cr">info@electroriginc.cr</a>
+      </div>
+      <div class="contact-item">
+        <h4>Atención</h4>
+        <p>Agente Ejecutivo Comercial</p>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 ElectroOriginc. Todos los derechos reservados. | San José - Heredia, Costa Rica</p>
+      <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -540,18 +546,15 @@
 
     // Carrusel Automático
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const totalSlides = slides.length;
+    const totalSlides = document.querySelectorAll('.carousel-item').length;
     
     function showSlide(index) {
       currentSlide = (index + totalSlides) % totalSlides;
       document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
     }
 
-    function setSlide(index) { showSlide(index); }
-    setInterval(() => showSlide(currentSlide + 1), 6000); // Cambia cada 6 segundos
+    // Temporizador de 6 segundos
+    setInterval(() => showSlide(currentSlide + 1), 6000); 
   </script>
 
 </body>
