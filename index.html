@@ -161,4 +161,398 @@
       font-weight: 300;
     }
 
-    /* Degrad
+    /* Degradado oscuro para que el texto resalte igual que en la imagen */
+    .item-1 { background-image: linear-gradient(to right, rgba(7,16,34,0.95) 0%, rgba(7,16,34,0.4) 100%), url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop'); }
+    .item-2 { background-image: linear-gradient(to right, rgba(7,16,34,0.95) 0%, rgba(7,16,34,0.4) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop'); }
+    .item-3 { background-image: linear-gradient(to right, rgba(7,16,34,0.95) 0%, rgba(7,16,34,0.4) 100%), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1920&auto=format&fit=crop'); }
+
+    /* Botones estilo Píldora del Banner */
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-pill {
+      display: inline-block;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 50px; /* Forma de píldora idéntica a la imagen */
+      transition: transform 0.2s, opacity 0.3s;
+      font-size: 1rem;
+    }
+    .btn-pill:hover { transform: translateY(-2px); opacity: 0.9; }
+    
+    .btn-cyan { background-color: var(--cyan); color: var(--bg-dark); }
+    .btn-orange { background-color: var(--orange); color: var(--white); }
+
+    /* Controles Carrusel */
+    .carousel-indicators {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .carousel-dot.active { background-color: var(--cyan); }
+
+    /* =========================================
+       3. CATÁLOGO (Fondo Blanco, Tarjetas Limpias)
+       ========================================= */
+    .catalogo-section {
+      background-color: var(--white);
+      padding: 80px 0;
+      color: var(--card-text);
+    }
+
+    .catalogo-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      color: var(--card-text);
+      font-weight: 700;
+    }
+
+    .product-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+      gap: 30px; 
+    }
+
+    .product-card {
+      background-color: var(--white);
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: var(--sombra); 
+    }
+
+    /* Imágenes adaptadas para lucir más limpias (estilo icono/vector) */
+    .product-card img { 
+      width: 100%; 
+      height: 160px; 
+      object-fit: contain; /* Para que la imagen no se recorte y luzca centrada */
+      margin-bottom: 20px; 
+      background-color: #F8FAFC;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .product-card h3 { 
+      font-size: 1.3rem; 
+      margin-bottom: 10px; 
+      font-weight: 700;
+    }
+
+    .product-card p { 
+      font-size: 0.95rem; 
+      color: #64748B; 
+      margin-bottom: 25px; 
+      min-height: 45px; 
+    }
+
+    .btn-card-orange {
+      background-color: var(--orange);
+      color: var(--white);
+      padding: 10px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+    .btn-card-orange:hover { opacity: 0.8; }
+
+    /* =========================================
+       4. IMPORTACIÓN PERSONALIZADA (Fondo Azul Oscuro)
+       ========================================= */
+    .importacion-personalizada { 
+      padding: 60px 0; 
+      background-color: var(--bg-dark); 
+      text-align: center; 
+    }
+    .importacion-personalizada h3 { font-size: 1.8rem; margin-bottom: 15px; }
+    .importacion-personalizada p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+
+    /* =========================================
+       5. TRACKING BAR (Barra Cian Sólida)
+       ========================================= */
+    .tracking { 
+      padding: 40px 0; 
+      background-color: var(--cyan); 
+      color: var(--bg-dark); 
+      text-align: center; 
+    }
+    .tracking h2 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 700;}
+    
+    .tracking-form { 
+      display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+      gap: 15px; 
+      margin-bottom: 20px; 
+    }
+    .tracking-input { 
+      padding: 12px 20px; 
+      width: 100%; 
+      max-width: 400px; 
+      border: none; 
+      border-radius: 50px; 
+      font-size: 1rem; 
+      outline: none;
+    }
+    
+    .tracking-steps { 
+      display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+      font-size: 1rem; 
+      font-weight: 600; 
+    }
+
+    /* =========================================
+       6. CONTACTO & FOOTER
+       ========================================= */
+    .contacto { padding: 60px 0; background-color: var(--bg-header); }
+    .contact-details { text-align: center; font-size: 1.1rem; color: var(--text-muted); }
+    .contact-details p { margin-bottom: 10px; }
+    .contact-details a { color: var(--cyan); text-decoration: none; font-weight: bold; }
+    
+    footer { 
+      background-color: var(--bg-dark); 
+      padding: 25px 0; 
+      text-align: center; 
+      color: #4A5568; 
+      font-size: 0.9rem;
+    }
+
+    /* =========================================
+       ADAPTACIÓN A CELULARES
+       ========================================= */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav, .header-icons { display: none; width: 100%; }
+      nav.active { display: block; }
+      nav ul { flex-direction: column; gap: 15px; text-align: center; padding: 20px 0; }
+      
+      .carousel-item h1 { font-size: 2.5rem; }
+      .carousel-item p { font-size: 1.2rem; }
+      .hero-carousel { height: 70vh; min-height: 450px; padding: 100px 0; }
+      .hero-buttons { justify-content: center; }
+      .carousel-content { text-align: center; padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="35" height="35">
+          <path d="M 50 10 A 40 40 0 1 1 50 90 A 40 40 0 1 1 50 10 Z M 55 22 A 28 28 0 1 0 55 78 A 28 28 0 1 0 55 22 Z" fill="var(--cyan)"/>
+          <path d="M 8 55 C 20 85 75 90 95 45" fill="none" stroke="var(--cyan)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="85" cy="22" r="6" fill="var(--cyan)"/>
+        </svg>
+        <span class="logo-text">ElectroOriginc</span>
+      </a>
+      
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <nav id="mobile-menu">
+        <ul>
+          <li><a href="#catalogo" onclick="toggleMenu()">Inicio</a></li>
+          <li><a href="#catalogo" onclick="toggleMenu()">Catálogo</a></li>
+          <li><a href="#tracking" onclick="toggleMenu()">Movilidad</a></li>
+          <li><a href="#tracking" onclick="toggleMenu()">Tracking</a></li>
+          <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-icons">
+        <span title="Buscar">🔍</span>
+        <a href="https://wa.me/50672429342" target="_blank" style="text-decoration:none; color:inherit;" title="WhatsApp">📞</a>
+        <span title="Carrito">🛒</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item item-1">
+        <div class="carousel-content container">
+          <h1>Importaciones directas</h1>
+          <p>Movilidad - Tecnología - Innovación.</p>
+          <div class="hero-buttons">
+            <a href="#catalogo" class="btn-pill btn-cyan">Ver Catálogo</a>
+            <a href="#tracking" class="btn-pill btn-orange">Rastrear Envío</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item item-2">
+        <div class="carousel-content container">
+          <h1>Casas Modulares Inteligentes</h1>
+          <p>Integración domótica total y diseño premium en Costa Rica.</p>
+          <div class="hero-buttons">
+            <a href="#catalogo" class="btn-pill btn-cyan">Ver Viviendas</a>
+            <a href="https://wa.me/50672429342" target="_blank" class="btn-pill btn-orange">Cotizar Ahora</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item item-3">
+        <div class="carousel-content container">
+          <h1>Vehículos Avanzados</h1>
+          <p>Autonomía extendida y la última tecnología para Costa Rica.</p>
+          <div class="hero-buttons">
+            <a href="#catalogo" class="btn-pill btn-cyan">Ver Modelos</a>
+            <a href="https://wa.me/50672429342" target="_blank" class="btn-pill btn-orange">Asesoría Directa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-indicators">
+      <span class="carousel-dot active" onclick="setSlide(0)"></span>
+      <span class="carousel-dot" onclick="setSlide(1)"></span>
+      <span class="carousel-dot" onclick="setSlide(2)"></span>
+    </div>
+  </section>
+
+  <section id="catalogo" class="catalogo-section">
+    <div class="container">
+      <h2>Catálogo de Soluciones Sostenibles</h2>
+      <div class="product-grid">
+        
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Vehículos Eléctricos">
+          <h3>Vehículos Eléctricos</h3>
+          <p>Autonomía sin emisiones. Tecnología de vanguardia.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Eléctrico" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=400&auto=format&fit=crop" alt="Vehículos Híbridos">
+          <h3>Vehículos Híbridos</h3>
+          <p>Balance entre eficiencia eléctrica y combustión.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20Híbrido" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=400&auto=format&fit=crop" alt="Vehículos de Combustión">
+          <h3>Vehículos Combustión</h3>
+          <p>Potencia y fiabilidad de marcas globales.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20Vehículo%20de%20Combustión" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Casas Modulares">
+          <h3>Smart Modular Home</h3>
+          <p>Viviendas prefabricadas con domótica integrada.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20una%20Casa%20Modular" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Cargadores">
+          <h3>Estaciones de Carga</h3>
+          <p>Wallbox residenciales e infraestructura rápida.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Estaciones%20Eléctricas" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?q=80&w=400&auto=format&fit=crop" alt="Equipo Médico">
+          <h3>Equipo Médico</h3>
+          <p>Importación de tecnología de diagnóstico de precisión.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Médico" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop" alt="Equipo Industrial">
+          <h3>Equipo Industrial</h3>
+          <p>Automatización y herramientas de alto rendimiento.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20Equipo%20Industrial" target="_blank" class="btn-card-orange">Ver Catálogo</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="importacion-personalizada">
+    <div class="container">
+      <h3>¿No encuentras lo que buscas?</h3>
+      <p>Servicio de Importación Personalizada. Cuéntanos qué necesitas y lo traemos directo para ti.</p>
+      <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20un%20pedido%20especial" target="_blank" class="btn-pill btn-orange">Solicitar Cotización Especial</a>
+    </div>
+  </section>
+
+  <section id="tracking" class="tracking">
+    <div class="container">
+      <h2>Rastrea Tu Envío Internacional</h2>
+      <div class="tracking-form">
+        <input type="text" placeholder="Ingrese número de guía o contenedor..." class="tracking-input">
+        <button class="btn-pill btn-orange" style="border:none; cursor:pointer;">Rastrear</button>
+      </div>
+      <div class="tracking-steps">
+        <p>1. Pedido ➔ 2. Carga ➔ 3. Aduanas ➔ 4. Entrega</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <div class="contact-details">
+        <p><strong>📍 Ubicación Oficinas:</strong> Paseo de las Flores, Heredia</p>
+        <p><strong>📞 Atención:</strong> Agente Ejecutivo Comercial</p>
+        <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/50672429342" target="_blank">+506 72429342</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 ElectroOriginc. Todos los derechos reservados. | San José - Heredia, Costa Rica</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menú Móvil
+    function toggleMenu() {
+      if (window.innerWidth <= 768) {
+        document.getElementById('mobile-menu').classList.toggle('active');
+      }
+    }
+
+    // Carrusel Automático
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const totalSlides = slides.length;
+    
+    function showSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+    }
+
+    function setSlide(index) { showSlide(index); }
+    setInterval(() => showSlide(currentSlide + 1), 6000); // Cambia cada 6 segundos
+  </script>
+
+</body>
+</html>
