@@ -3,58 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElectrOriginc | Importamos Móvilidad - Tecnología - Innovación</title>
+  <title>ElectrOriginc | Importaciones directas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* VARIABLES DE COLOR OFICIALES Y REPETIDAS */
     :root {
-      --oscuro-principal: #0C134F; /* Azul Marino Tecnológico */
-      --cian-brillante: #00FFFF;     /* Celeste/Cian Oficial de ElectrOriginc */
-      --blanco: #F9F7F7;
-      --gris-suave: #CBD5E1;
-      --cian-detalle: #00A3CC;      /* Cian para detalles y botones de WhatsApp */
-      --blanco-fondo-tarjeta: #FFFFFF;
-      --negro-tarjetas: #1A1A40;   /* Fondo tarjetas catálogo */
-      --naranja-acento: #FF7300;   /* Naranja para el botón especial */
-      --sombra: 0 4px 6px rgba(0, 0, 0, 0.3);
-      --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --bg-header: #07172b;
+      --bg-hero: #081a32;
+      --bg-cta: #061527;
+      --cyan: #00d2ff;
+      --orange: #f37023;
+      --white: #ffffff;
+      --card-border: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dark: #0f172a;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: var(--fuente-principal);
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     body {
-      background-color: var(--oscuro-principal);
-      color: var(--blanco);
-      line-height: 1.6;
+      background-color: var(--white);
+      color: var(--text-dark);
+      padding-top: 72px;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
-    /* =========================================
-       1. HEADER (Cabecera) - FIJO
-       ========================================= */
+    /* HEADER */
     header {
-      background-color: rgba(12, 19, 79, 0.95); /* Semi-transparente */
-      padding: 15px 0;
-      position: fixed; /* Fijo arriba */
+      background-color: var(--bg-header);
+      height: 72px;
+      position: fixed;
       width: 100%;
       top: 0;
+      left: 0;
       z-index: 1000;
-      border-bottom: 2px solid var(--cian-brillante);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
     }
 
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
     }
 
     .logo-container {
@@ -64,409 +67,275 @@
       text-decoration: none;
     }
 
-    /* Ícono orbital cian idéntico al texto */
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--cian-brillante);
-      border-radius: 50%;
-      position: relative;
-    }
-    .logo-icon::after {
-      content: '';
-      position: absolute;
-      width: 120%;
-      height: 50%;
-      border: 3px solid var(--cian-brillante);
-      border-radius: 50%;
-      top: 25%;
-      left: -10%;
-      transform: rotate(-15deg);
-    }
-
     .logo-text {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--cian-brillante); /* Color Cian Oficial */
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: -0.3px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 28px;
     }
 
     nav a {
-      color: var(--blanco);
+      color: #cbd5e1;
       text-decoration: none;
+      font-size: 0.92rem;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: var(--cian-brillante);
+      color: var(--cyan);
     }
 
-    /* Botón directo WhatsApp Jonathan Zamora */
-    .btn-header-wa {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: transparent;
-      color: var(--cian-brillante);
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid var(--cian-brillante);
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-    .btn-header-wa:hover {
-      background-color: var(--cian-brillante);
-      color: var(--oscuro-principal);
-    }
-
-    /* =========================================
-       2. HERO SECTION - CARRUSEL ACTUALIZADO (image_35.png)
-       ========================================= */
-    .hero-carousel {
-      padding: 160px 0 100px; /* Ajuste para header fijo */
-      position: relative;
-      overflow: hidden;
-      height: 70vh; /* Altura del carrusel */
-    }
-
-    .carousel-inner {
-      display: flex;
-      width: 300%; /* 3 slides */
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-item {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
+    .header-icons {
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      gap: 18px;
+      color: #cbd5e1;
     }
 
-    /* Contenido sobreimpreso en cada slide */
-    .carousel-content {
-      max-width: 800px;
-      padding: 0 40px;
-    }
-
-    .carousel-item h1 {
-      font-size: 3.8rem;
-      margin-bottom: 25px;
-      color: var(--blanco);
-      line-height: 1.2;
-    }
-
-    .carousel-item p {
-      font-size: 1.6rem;
-      margin-bottom: 50px;
-      color: var(--gris-suave);
-    }
-
-    /* Definición de los 3 Slides Solicitados y Visibles (image_35.png, etc.) */
-    .item-1 {
-      /* Slide 1: El Barco Original (image_33.png) */
-      background-image: linear-gradient(rgba(12, 19, 79, 0.8), rgba(12, 19, 79, 0.8)), 
-                        url('https://via.placeholder.com/1920x1080?text=Barco+Cargo+Marítimo+Global');
-    }
-    .item-2 {
-      /* Slide 2: Casas Modulares Inteligentes */
-      background-image: linear-gradient(rgba(12, 19, 79, 0.8), rgba(12, 19, 79, 0.8)), 
-                        url('https://via.placeholder.com/1920x1080?text=Casas+Modulares+Inteligentes+HomeKit');
-    }
-    .item-3 {
-      /* Slide 3: Vehículos Híbridos y Eléctricos Combinados (image_35.png) */
-      background-image: linear-gradient(rgba(12, 19, 79, 0.8), rgba(12, 19, 79, 0.8)), 
-                        url('https://via.placeholder.com/1920x1080?text=Vehículos+Eléctricos+e+Híbridos+Cargando');
-    }
-
-    /* Botones principales en Hero */
-    .btn-main {
-      display: inline-block;
-      padding: 18px 35px;
-      background-color: var(--cian-brillante);
-      color: var(--oscuro-principal);
+    .header-icons a {
+      color: inherit;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      box-shadow: var(--sombra);
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .btn-main:hover {
-      background-color: var(--blanco);
-      transform: translateY(-3px);
-    }
-
-    /* Controles del Carrusel (Flechas y Puntos) */
-    .carousel-control-prev,
-    .carousel-control-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.3);
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 5px;
-    }
-    .carousel-control-prev { left: 20px; }
-    .carousel-control-next { right: 20px; }
-
-    .carousel-indicators {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-    .carousel-dot {
-      width: 12px;
-      height: 12px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .carousel-dot.active {
-      background-color: var(--cian-brillante);
+      align-items: center;
+      transition: color 0.2s;
     }
 
-    /* =========================================
-       3. CATALOGO (6 Pilares)
-       ========================================= */
+    .header-icons a:hover {
+      color: var(--cyan);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background-color: var(--bg-hero);
+      background-image: 
+        linear-gradient(to right, rgba(8, 26, 50, 0.98) 0%, rgba(8, 26, 50, 0.75) 45%, rgba(8, 26, 50, 0.25) 100%),
+        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center right;
+      padding: 90px 0 100px;
+      color: var(--white);
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero h1 {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.35rem;
+      color: #cbd5e1;
+      font-weight: 400;
+      margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn-pill {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, opacity 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-cyan {
+      background-color: var(--cyan);
+      color: #031b2e;
+    }
+
+    .btn-orange {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+
+    /* CATALOGO */
     .catalogo {
-      padding: 100px 0;
+      padding: 70px 0 80px;
+      background-color: var(--white);
     }
 
     .catalogo h2 {
       text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 60px;
-      color: var(--blanco);
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 45px;
+      letter-spacing: -0.4px;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .product-card {
-      background-color: var(--negro-tarjetas);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: var(--sombra);
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      transition: transform 0.3s;
-      border: 2px solid transparent;
-    }
-    .product-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--cian-brillante);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .product-card img {
-      max-width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 25px;
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .product-icon {
+      width: 100%;
+      height: 125px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .product-icon svg {
+      max-height: 110px;
+      width: auto;
     }
 
     .product-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: var(--blanco);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
     }
 
     .product-card p {
-      font-size: 1.2rem;
-      color: var(--gris-suave);
-      margin-bottom: 30px;
-    }
-
-    /* Botones de Tarjeta (Acoplados Cian) */
-    .card-buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-    .btn-card {
-      display: inline-block;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-    .btn-detalles {
-      background-color: transparent;
-      color: var(--cian-detalle);
-      border: 2px solid var(--cian-detalle);
-    }
-    .btn-detalles:hover {
-      background-color: var(--cian-detalle);
-      color: var(--blanco);
-    }
-
-    .btn-wa-card {
-      background-color: var(--cian-detalle);
-      color: var(--blanco);
-    }
-    .btn-wa-card:hover {
-      background-color: var(--blanco);
-      color: var(--cian-detalle);
-    }
-
-    /* =========================================
-       4. SECCIÓN ESPECIAL (Importación Personalizada - image_33.png)
-       ========================================= */
-    .importacion-personalizada {
-      padding: 60px 0;
-      background-color: rgba(12, 19, 79, 0.9); /* Un poco más claro */
-      text-align: center;
-    }
-    .importacion-personalizada h3 {
-      font-size: 2.2rem;
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.45;
       margin-bottom: 20px;
-      color: var(--blanco);
+      flex-grow: 1;
     }
-    .importacion-personalizada p {
-      font-size: 1.3rem;
-      margin-bottom: 40px;
-      color: var(--gris-suave);
-    }
-    .btn-personalizado {
-      display: inline-block;
-      padding: 18px 35px;
-      background-color: var(--naranja-acento); /* Naranja oficial para esta sección */
-      color: var(--blanco);
+
+    .btn-card {
+      width: 100%;
+      background-color: var(--orange);
+      color: var(--white);
+      padding: 10px 8px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      box-shadow: var(--sombra);
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .btn-personalizado:hover {
-      background-color: #e66600;
-      transform: translateY(-3px);
+      line-height: 1.2;
+      transition: opacity 0.2s ease;
     }
 
-    /* =========================================
-       5. TRACKING BAR (Barra Celeste Vibrante - 4 pasos)
-       ========================================= */
-    .tracking {
-      padding: 80px 0;
-      background-color: var(--cian-brillante);
-      color: var(--oscuro-principal);
+    .btn-card:hover {
+      opacity: 0.88;
+    }
+
+    /* CALL TO ACTION PERSONALIZADO */
+    .cta-section {
+      background-color: var(--bg-cta);
+      padding: 55px 0 50px;
       text-align: center;
+      color: var(--white);
     }
 
-    .tracking h2 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-      color: var(--oscuro-principal);
+    .cta-section h3 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cta-section p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+    }
+
+    /* TRACKING BAR */
+    .tracking-bar {
+      background-color: var(--cyan);
+      padding: 24px 0 28px;
+      text-align: center;
+      color: #031b2e;
+    }
+
+    .tracking-bar h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 16px;
     }
 
     .tracking-form {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
+      gap: 12px;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 16px;
     }
 
     .tracking-input {
-      padding: 15px;
-      width: 350px;
-      border: 2px solid var(--oscuro-principal);
-      border-radius: 5px;
-      font-size: 1.1rem;
-    }
-
-    .btn-track {
-      padding: 15px 30px;
-      background-color: var(--oscuro-principal);
-      color: var(--cian-brillante);
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .btn-track:hover {
-      background-color: #1A1A40;
-    }
-
-    .tracking-steps {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
-
-    /* =========================================
-       6. CONTACTO & FOOTER
-       ========================================= */
-    .contacto {
-      padding: 100px 0;
-    }
-
-    .contacto h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 60px;
-      color: var(--blanco);
-    }
-
-    .contact-details {
-      text-align: center;
-      font-size: 1.3rem;
-      color: var(--gris-suave);
-    }
-
-    .contact-details p {
-      margin-bottom: 20px;
-    }
-
-    .contact-details a {
-      color: var(--cian-brillante);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background-color: rgba(12, 19, 79, 0.95);
-      padding: 40px 0;
-      text-align: center;
-      color: var(--gris-suave);
-      border-top: 1px solid var(--cian-brillante);
+      flex: 1;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      font-size: 0.95rem;
+      outline: none;
     }
 
     /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 768px) {
-      .carousel-item h1 { font-size: 2.5rem; }
-      .carousel-item p { font-size: 1.2rem; }
-      nav ul { flex-direction: column; gap: 15px; text-align: center; padding: 20px 0; }
-      .nav-container { flex-direction: column; }
-      .tracking-form { flex-direction: column; align-items: center; }
-      .tracking-input { width: 100%; max-width: 350px; }
-      .tracking-steps { flex-direction: column; gap: 15px; }
-      .card-buttons { flex-direction: column; gap: 10px; }
-      .carousel-inner { width: 100%; flex-direction: column; height: 300%; } /* Ajuste de CSS para carrusel vertical si es necesario en móvil */
+      nav ul {
+        display: none;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding: 60px 0 70px;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .hero p {
+        font-size: 1.15rem;
+      }
     }
   </style>
 </head>
@@ -475,222 +344,154 @@
   <header>
     <div class="container nav-container">
       <a href="#" class="logo-container">
-        <div class="logo-icon"></div>
-        <span class="logo-text">ELECTR ORIGINC</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34">
+          <path d="M 50 10 A 40 40 0 1 1 50 90 A 40 40 0 1 1 50 10 Z M 55 22 A 28 28 0 1 0 55 78 A 28 28 0 1 0 55 22 Z" fill="var(--cyan)"/>
+          <path d="M 8 55 C 20 85 75 90 95 45" fill="none" stroke="var(--cyan)" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="85" cy="22" r="6" fill="var(--cyan)"/>
+        </svg>
+        <span class="logo-text">ElectrOriginc</span>
       </a>
+
       <nav>
         <ul>
+          <li><a href="#inicio">Inicio</a></li>
           <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#movilidad">Movilidad</a></li>
           <li><a href="#tracking">Tracking</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <a href="https://wa.me/50672429342?text=Hola%20Jonathan%20Zamora,%20deseo%20asesoría%20sobre%20importaciones" target="_blank" class="btn-header-wa">
-        💬 Asesor: +506 72429342
-      </a>
+
+      <div class="header-icons">
+        <a href="#buscar" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+        <a href="#cuenta" aria-label="Cuenta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+        <a href="https://wa.me/50672429342" target="_blank" aria-label="Carrito o cotizaciones">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <section class="hero-carousel">
-    <div class="carousel-inner">
-      
-      <div class="carousel-item item-1">
-        <div class="carousel-content container">
-          <h1>Importamos Móvilidad - Tecnología - Innovación</h1>
-          <p>Tu socio confiable para las mejores soluciones tecnológicas, directamente en Costa Rica.</p>
-          <a href="#catalogo" class="btn-main">Explorar Catálogo Disponible</a>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Importaciones directas</h1>
+        <p>Movilidad - Tecnología - Innovación.</p>
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn-pill btn-cyan">Ver Catálogo</a>
+          <a href="#tracking" class="btn-pill btn-orange">Rastrear Envío</a>
         </div>
       </div>
-      
-      <div class="carousel-item item-2">
-        <div class="carousel-content container">
-          <h1>Casas Modulares Inteligentes Tipo Apple</h1>
-          <p>Innovación habitacional con integración domótica total, eficiencia y diseño premium en Costa Rica.</p>
-          <a href="#catalogo" class="btn-main">Ver Viviendas Disponibles</a>
-        </div>
-      </div>
-      
-      <div class="carousel-item item-3">
-        <div class="carousel-content container">
-          <h1>Vehículos Híbridos & Eléctricos Avanzados</h1>
-          <p>Autonomía extendida, carga rápida y la última tecnología para Costa Rica.</p>
-          <a href="#catalogo" class="btn-main">Ver Modelos</a>
-        </div>
-      </div>
-
-    </div>
-
-    <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
-    <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
-
-    <div class="carousel-indicators">
-      <span class="carousel-dot active" onclick="setSlide(0)"></span>
-      <span class="carousel-dot" onclick="setSlide(1)"></span>
-      <span class="carousel-dot" onclick="setSlide(2)"></span>
     </div>
   </section>
 
-  <section id="catalogo" class="catalogo">
+  <section class="catalogo" id="catalogo">
     <div class="container">
       <h2>Catálogo de Soluciones Sostenibles</h2>
       <div class="product-grid">
-        
+
         <div class="product-card">
-          <img src="https://via.placeholder.com/400x300?text=Drone+Mavic+Pro" alt="Drone Mavic Pro ElectrOriginc">
-          <h3>Mavic Pro Drone</h3>
-          <p>₡419,000</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20un%20Drone%20Mavic%20Pro" target="_blank" class="btn-card btn-wa-card">Cotizar por WhatsApp</a>
+          <div class="product-icon">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="40" y="8" width="22" height="14" rx="3" fill="#0284c7"/>
+              <line x1="45" y1="2" x2="45" y2="8" stroke="#0284c7" stroke-width="2.5"/>
+              <line x1="57" y1="2" x2="57" y2="8" stroke="#0284c7" stroke-width="2.5"/>
+              <path d="M 51 22 Q 51 32 65 35" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+              <path d="M 25 78 C 32 68 52 54 80 50 C 115 45 140 52 165 65 L 182 72 C 188 75 192 80 190 86 L 180 88 C 176 80 166 74 154 74 C 142 74 132 80 128 88 L 78 88 C 74 80 64 74 52 74 C 40 74 30 80 26 88 Z" fill="#38bdf8"/>
+              <path d="M 78 54 C 95 51 125 53 145 64 L 125 64 L 80 64 Z" fill="#0f172a"/>
+              <circle cx="52" cy="88" r="14" fill="#1e293b"/>
+              <circle cx="52" cy="88" r="7" fill="#94a3b8"/>
+              <circle cx="154" cy="88" r="14" fill="#1e293b"/>
+              <circle cx="154" cy="88" r="7" fill="#94a3b8"/>
+            </svg>
           </div>
+          <h3>Sleek EV Sedan</h3>
+          <p>Vehículos eléctricos de alto rendimiento, tecnología autónoma y máxima eficiencia energética.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20del%20Sleek%20EV%20Sedan" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
         <div class="product-card">
-          <img src="https://via.placeholder.com/400x300?text=Electric+Scooter+S1" alt="Electric Scooter S1 ElectrOriginc">
-          <h3>Electric Scooter S1</h3>
-          <p>₡395,000</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20un%20Scooter%20S1" target="_blank" class="btn-card btn-wa-card">Cotizar por WhatsApp</a>
+          <div class="product-icon">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="35" y="32" width="130" height="70" rx="6" fill="#1e293b"/>
+              <rect x="42" y="38" width="116" height="58" rx="3" fill="#f8fafc"/>
+              <rect x="48" y="44" width="32" height="46" fill="#38bdf8" opacity="0.85"/>
+              <rect x="84" y="44" width="32" height="46" fill="#38bdf8" opacity="0.85"/>
+              <rect x="122" y="44" width="30" height="46" fill="#0284c7" opacity="0.75"/>
+              <line x1="64" y1="44" x2="64" y2="90" stroke="#f8fafc" stroke-width="1.5"/>
+              <line x1="100" y1="44" x2="100" y2="90" stroke="#f8fafc" stroke-width="1.5"/>
+              <path d="M 40 24 L 52 14 L 64 24 Z" fill="#0284c7"/>
+              <rect x="46" y="22" width="12" height="10" fill="#0284c7"/>
+            </svg>
           </div>
+          <h3>Smart Modular Home</h3>
+          <p>Módulos habitacionales prefabricados inteligentes, autosustentables y de ensamblaje rápido.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20la%20Smart%20Modular%20Home" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
         <div class="product-card">
-          <img src="https://via.placeholder.com/400x300?text=Razer+BlackWidow" alt="Razer BlackWidow ElectrOriginc">
-          <h3>Razer BlackWidow</h3>
-          <p>₡129,000</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20un%20Razer%20BlackWidow" target="_blank" class="btn-card btn-wa-card">Cotizar por WhatsApp</a>
+          <div class="product-icon">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="80" y="24" width="40" height="78" rx="8" fill="#0284c7"/>
+              <rect x="86" y="30" width="28" height="24" rx="4" fill="#082f49"/>
+              <path d="M 101 34 L 96 42 L 100 42 L 99 48 L 105 40 L 101 40 Z" fill="#38bdf8"/>
+              <path d="M 80 48 C 65 48 60 70 68 85 C 72 90 76 88 74 80 L 72 65" fill="none" stroke="#64748b" stroke-width="3.5" stroke-linecap="round"/>
+              <rect x="66" y="80" width="10" height="16" rx="2" fill="#0f172a"/>
+              <path d="M 120 48 C 135 48 140 70 132 85 C 128 90 124 88 126 80 L 128 65" fill="none" stroke="#64748b" stroke-width="3.5" stroke-linecap="round"/>
+              <rect x="124" y="80" width="10" height="16" rx="2" fill="#0f172a"/>
+              <rect x="70" y="100" width="60" height="6" rx="2" fill="#334155"/>
+            </svg>
           </div>
+          <h3>Dual Wallbox EV Charger</h3>
+          <p>Estaciones de carga bifásicas de alta potencia para residencias, flotillas y comercios.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20del%20Dual%20Wallbox%20EV%20Charger" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
         <div class="product-card">
-          <img src="https://via.placeholder.com/400x300?text=USB-C+Dock" alt="USB-C Docking Station ElectrOriginc">
-          <h3>USB-C Docking Station</h3>
-          <p>₡55,900</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20un%20Dock%20USB-C" target="_blank" class="btn-card btn-wa-card">Cotizar por WhatsApp</a>
+          <div class="product-icon">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="105,32 165,32 150,92 85,92" fill="#0284c7" stroke="#1e293b" stroke-width="2"/>
+              <line x1="125" y1="32" x2="108" y2="92" stroke="#e2e8f0" stroke-width="1.5"/>
+              <line x1="145" y1="32" x2="128" y2="92" stroke="#e2e8f0" stroke-width="1.5"/>
+              <line x1="98" y1="52" x2="158" y2="52" stroke="#e2e8f0" stroke-width="1.5"/>
+              <line x1="92" y1="72" x2="152" y2="72" stroke="#e2e8f0" stroke-width="1.5"/>
+              <rect x="42" y="55" width="46" height="37" rx="5" fill="#f97316"/>
+              <rect x="52" y="47" width="26" height="8" rx="2" fill="#334155"/>
+              <circle cx="56" cy="72" r="5" fill="#0f172a"/>
+              <rect x="68" y="66" width="14" height="12" rx="2" fill="#0f172a"/>
+              <circle cx="50" cy="26" r="8" fill="#facc15"/>
+            </svg>
           </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://via.placeholder.com/400x300?text=Equipo+Médico" alt="Equipo Médico de Alta Precisión ElectrOriginc">
-          <h3>Equipo Médico de Alta Precisión</h3>
-          <p>Consultar Precio</p>
-          <p style="color:var(--gris-suave); font-size:1rem; margin-top:-15px;">Monitor Signos Vitales, Equipo de Diagnóstico</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20Equipo%20Médico" target="_blank" class="btn-card btn-wa-card">Cotizar por WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://via.placeholder.com/400x300?text=Equipo+Industrial" alt="Maquinaria y Equipo Industrial ElectrOriginc">
-          <h3>Maquinaria y Equipo Industrial</h3>
-          <p>Consultar Precio</p>
-          <p style="color:var(--gris-suave); font-size:1rem; margin-top:-15px;">Automatización, Generadores, Componentes Pesados</p>
-          <div class="card-buttons">
-            <a href="#" class="btn-card btn-detalles">Detalles</a>
-            <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20Equipo%20Industrial" target="_blank" class="btn-card btn-wa-card">Cotizar por WhatsApp</a>
-          </div>
+          <h3>Solar Energy Station</h3>
+          <p>Generadores solares y bancos de baterías portátiles de ciclo profundo para respaldo continuo.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20la%20Solar%20Energy%20Station" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section class="importacion-personalizada">
+  <section class="cta-section">
     <div class="container">
       <h3>¿No encuentras lo que buscas?</h3>
-      <p>Servicio de Importación Personalizada. Cuéntanos qué necesitas y lo traemos directo para ti en Costa Rica.</p>
-      <a href="https://wa.me/50672429342?text=Hola%20Jonathan,%20quiero%20cotizar%20un%20pedido%20especial" target="_blank" class="btn-personalizado">Solicitar Cotización Especial</a>
+      <p>Servicio de Importación Personalizada. Cuéntanos qué necesitas y lo traemos directo para ti.</p>
+      <a href="https://wa.me/50672429342?text=Hola,%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20especial%20de%20importaci%C3%B3n" target="_blank" class="btn-pill btn-orange">Solicitar Cotización Especial</a>
     </div>
   </section>
 
-  <section id="tracking" class="tracking">
-    <div class="container tracking-container">
+  <section class="tracking-bar" id="tracking">
+    <div class="container">
       <h2>Rastrea Tu Envío Internacional</h2>
       <div class="tracking-form">
-        <input type="text" placeholder="Ingrese número de guía o contenedor..." class="tracking-input">
-        <button class="btn-track">Rastrear</button>
-      </div>
-      <div class="tracking-steps">
-        <p>1. Pedido ➔ 2. Carga ➔ 3. Aduanas ➔ 4. Entrega</p>
+        <input type="text" class="tracking-input" placeholder="Ingresa tu número de guía o contenedor...">
+        <button class="btn-pill btn-orange" onclick="alert('Sistema de tracking en sincronización aduanera.')">Rastrear</button>
       </div>
     </div>
   </section>
-
-  <section id="contacto" class="contacto">
-    <div class="container contact-container">
-      <h2>Contáctanos</h2>
-      <div class="contact-details">
-        <p><strong>Ubicación Oficinas:</strong> Paseo de las Flores, Heredia</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/50622615000" target="_blank">+506 2261-5000</a></p>
-        <p><strong>Correo:</strong> <a href="mailto:info@electroriginc.cr">info@electroriginc.cr</a></p>
-        <p><strong>Atención:</strong> Jonathan Zamora (Agente Ejecutivo Comercial)</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados. | San José - Heredia, Costa Rica</p>
-    </div>
-  </footer>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const totalSlides = slides.length;
-    let autoSlideTimer;
-
-    function showSlide(index) {
-      if (index >= totalSlides) {
-        currentSlide = 0;
-      } else if (index < 0) {
-        currentSlide = totalSlides - 1;
-      } else {
-        currentSlide = index;
-      }
-      
-      const carouselInner = document.querySelector('.carousel-inner');
-      carouselInner.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
-      
-      // Actualizar puntos
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-      });
-
-      // Reiniciar temporizador automático
-      startAutoSlide();
-    }
-
-    function nextSlide() {
-      showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-      showSlide(currentSlide - 1);
-    }
-
-    function setSlide(index) {
-      showSlide(index);
-    }
-
-    // Slide automático cada 6 segundos
-    function startAutoSlide() {
-      if (autoSlideTimer) {
-        clearInterval(autoSlideTimer);
-      }
-      autoSlideTimer = setInterval(nextSlide, 6000); // 6 segundos
-    }
-
-    // Iniciar
-    startAutoSlide();
-  </script>
 
 </body>
 </html>
