@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElectrOriginc | Importaciones Directas</title>
+  <title>ElectroOriginc | Importaciones Directas</title>
+  
+  <!-- Fuente idéntica a la imagen para darle ese toque moderno y limpio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     /* =========================================
-       VARIABLES EXACTAS AL DISEÑO 
+       VARIABLES EXACTAS AL DISEÑO (SCREENSHOT)
        ========================================= */
     :root {
-      --bg-dark: #071527;        
-      --cyan: #00E5FF;           
-      --orange: #F57C00;         
+      --bg-dark: #061428;        /* Azul marino del fondo */
+      --cyan: #00E5FF;           /* Cian de botones y barra */
+      --orange: #E67E22;         /* Naranja de botones */
       --white: #FFFFFF;
       --text-muted: #94A3B8;
       --card-bg: #FFFFFF;
       --text-dark: #0F172A;
       --sombra: 0 4px 15px rgba(0, 0, 0, 0.08);
-      --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --fuente-principal: 'Inter', sans-serif;
     }
 
     * {
@@ -31,6 +37,7 @@
       background-color: var(--white);
       color: var(--text-dark);
       line-height: 1.6;
+      padding-top: 70px; /* Espacio para el header fijo */
     }
 
     .container {
@@ -40,7 +47,7 @@
     }
 
     /* =========================================
-       1. HEADER 
+       1. HEADER (Cinta superior oscura)
        ========================================= */
     header {
       background-color: var(--bg-dark);
@@ -56,7 +63,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; 
     }
 
     .logo-container {
@@ -67,7 +73,7 @@
     }
 
     .logo-text {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--cyan);
       letter-spacing: 0.5px;
@@ -86,7 +92,7 @@
     nav a {
       color: var(--white);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 400;
       transition: color 0.3s;
     }
@@ -100,7 +106,7 @@
       align-items: center;
       gap: 20px;
       color: var(--white);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .header-icons a {
@@ -120,58 +126,55 @@
     }
 
     /* =========================================
-       2. HERO SECTION 
+       2. HERO SECTION (Diseño dividido de la foto)
        ========================================= */
-    .hero-carousel {
-      padding: 140px 0 80px;
+    .hero {
+      background-color: var(--bg-dark);
+      padding: 60px 0;
+      color: var(--white);
       position: relative;
       overflow: hidden;
-      height: 70vh;
-      min-height: 500px;
-      background-color: var(--bg-dark);
     }
 
-    .carousel-inner {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-item {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
+    .hero-inner {
       display: flex;
       align-items: center;
-      text-align: left; 
+      justify-content: space-between;
+      gap: 40px;
     }
 
-    .carousel-content {
-      max-width: 650px;
-      padding: 0 40px;
+    .hero-text {
+      flex: 1;
+      max-width: 550px;
     }
 
-    .carousel-item h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
-      color: var(--white);
-      line-height: 1.1;
+    .hero-text h1 {
+      font-size: 3.2rem;
       font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
 
-    .carousel-item p {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-      color: var(--white);
+    .hero-text p {
+      font-size: 1.4rem;
       font-weight: 300;
-      opacity: 0.9;
+      color: var(--text-muted);
+      margin-bottom: 40px;
     }
 
-    .item-1 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop'); }
-    .item-2 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop'); }
-    .item-3 { background-image: linear-gradient(to right, rgba(7,21,39,1) 0%, rgba(7,21,39,0.7) 50%, rgba(7,21,39,0.1) 100%), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1920&auto=format&fit=crop'); }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Imagen del barco alineada a la derecha */
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
 
     .hero-buttons {
       display: flex;
@@ -185,7 +188,7 @@
       text-decoration: none;
       font-weight: 600;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: transform 0.2s, opacity 0.3s;
     }
     .btn-pill:hover { transform: translateY(-2px); opacity: 0.9; }
@@ -194,35 +197,33 @@
     .btn-orange { background-color: var(--orange); color: var(--white); }
 
     /* =========================================
-       3. CATÁLOGO (Las 3 categorías solicitadas)
+       3. CATÁLOGO (4 Tarjetas en Fondo Blanco)
        ========================================= */
     .catalogo-section {
-      background-color: var(--white);
-      padding: 80px 0;
+      background-color: var(--card-bg);
+      padding: 60px 0;
     }
 
     .catalogo-section h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 40px;
       color: var(--text-dark);
       font-weight: 700;
     }
 
     .product-grid { 
       display: grid; 
-      /* Ajustado para centrar 3 tarjetas perfectas */
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 30px; 
-      max-width: 1000px;
-      margin: 0 auto;
+      /* Forzamos 4 columnas como en la imagen */
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 20px; 
     }
 
     .product-card {
       background-color: var(--white);
       border: 1px solid #E2E8F0; 
       border-radius: 12px;
-      padding: 25px 15px;
+      padding: 20px 15px;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
       display: flex;
@@ -238,39 +239,37 @@
 
     .product-card img { 
       width: 100%;
-      height: 160px; 
+      height: 120px; 
       object-fit: contain; 
-      margin-bottom: 20px; 
+      margin-bottom: 15px; 
     }
 
     .product-card h3 { 
-      font-size: 1.25rem; 
-      margin-bottom: 10px; 
+      font-size: 1rem; 
+      margin-bottom: 8px; 
       color: var(--text-dark);
       font-weight: 700;
     }
 
     .product-card p { 
-      font-size: 0.95rem; 
+      font-size: 0.8rem; 
       color: #64748B; 
-      margin-bottom: 25px; 
+      margin-bottom: 20px; 
       line-height: 1.4;
       flex-grow: 1; 
     }
 
-    /* Botón adaptado para el texto requerido */
     .btn-card {
       background-color: var(--orange);
       color: var(--white);
-      padding: 12px 20px;
+      padding: 10px 15px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       line-height: 1.2;
       transition: opacity 0.3s;
       width: 100%;
-      max-width: 250px;
     }
     .btn-card:hover { opacity: 0.8; }
 
@@ -283,105 +282,70 @@
       text-align: center; 
       color: var(--white);
     }
-    .importacion-personalizada h3 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
-    .importacion-personalizada p { font-size: 1rem; color: var(--text-muted); margin-bottom: 25px; }
+    .importacion-personalizada h3 { font-size: 1.4rem; margin-bottom: 10px; font-weight: 600; }
+    .importacion-personalizada p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px; }
 
     /* =========================================
        5. TRACKING BAR 
        ========================================= */
     .tracking { 
-      padding: 30px 0 40px; 
+      padding: 25px 0; 
       background-color: var(--cyan); 
       color: var(--bg-dark); 
       text-align: center; 
     }
-    .tracking h2 { font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; color: var(--bg-dark); }
+    .tracking h2 { font-size: 1.4rem; margin-bottom: 15px; font-weight: 700; color: var(--bg-dark); }
     
     .tracking-form { 
       display: flex; 
       justify-content: center; 
       align-items: center;
       gap: 10px; 
-      margin-bottom: 15px; 
     }
     .tracking-input { 
-      padding: 12px 20px; 
+      padding: 10px 20px; 
       width: 100%; 
       max-width: 400px; 
       border: none; 
       border-radius: 50px; 
-      font-size: 1rem; 
-      outline: none;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .tracking-steps { 
-      display: flex; 
-      justify-content: center; 
       font-size: 0.95rem; 
-      font-weight: 600; 
-      color: var(--bg-dark);
-      opacity: 0.8;
-    }
-
-    /* =========================================
-       6. CONTACTO & FOOTER
-       ========================================= */
-    .contacto { 
-      padding: 40px 0 20px; 
-      background-color: var(--bg-dark); 
-      color: var(--white);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 30px;
-    }
-    .contact-item h4 { color: var(--cyan); margin-bottom: 10px; }
-    .contact-item p, .contact-item a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
-    
-    footer { 
-      background-color: var(--bg-dark); 
-      padding: 20px 0; 
-      text-align: center; 
-      color: #4A5568; 
-      font-size: 0.85rem;
+      outline: none;
     }
 
     /* =========================================
        ADAPTACIÓN A CELULARES
        ========================================= */
+    @media (max-width: 992px) {
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-text { max-width: 100%; }
+      .hero-image { justify-content: center; margin-top: 30px; }
+      .hero-buttons { justify-content: center; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 768px) {
-      .logo-text { font-size: 1.4rem; }
       .menu-toggle { display: block; }
       nav, .header-icons { display: none; width: 100%; }
       nav.active { display: block; }
       nav ul { flex-direction: column; gap: 15px; text-align: center; padding: 20px 0; }
-      .carousel-item h1 { font-size: 2.2rem; }
-      .carousel-item p { font-size: 1.1rem; }
-      .hero-carousel { height: 60vh; min-height: 450px; padding: 100px 0; }
-      .hero-buttons { justify-content: center; }
-      .carousel-content { text-align: center; padding: 0 20px; }
-      .tracking-form { flex-direction: column; padding: 0 20px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. HEADER EXACTO -->
+  <!-- HEADER -->
   <header>
     <div class="container nav-container">
       <a href="#" class="logo-container">
-        <!-- Logo SVG Orbital Actualizado -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="38" height="38">
+        <!-- Icono Orbital -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
           <path d="M 50 10 A 40 40 0 1 1 50 90 A 40 40 0 1 1 50 10 Z M 55 22 A 28 28 0 1 0 55 78 A 28 28 0 1 0 55 22 Z" fill="var(--cyan)"/>
           <path d="M 8 55 C 20 85 75 90 95 45" fill="none" stroke="var(--cyan)" stroke-width="4" stroke-linecap="round"/>
           <circle cx="85" cy="22" r="6" fill="var(--cyan)"/>
         </svg>
-        <span class="logo-text">Electr<span>Originc</span></span>
+        <span class="logo-text">Electro<span>Originc</span></span>
       </a>
       
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -404,77 +368,67 @@
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
-  <section class="hero-carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item item-1">
-        <div class="carousel-content container">
-          <h1>Importaciones directas</h1>
-          <p>Movilidad - Tecnología - Innovación.</p>
-          <div class="hero-buttons">
-            <a href="#catalogo" class="btn-pill btn-cyan">Ver Catálogo</a>
-            <a href="#tracking" class="btn-pill btn-orange">Rastrear Envío</a>
-          </div>
+  <!-- HERO SECTION (Diseño Dividido) -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Importaciones directas</h1>
+        <p>Movilidad - Tecnología - Innovación.</p>
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn-pill btn-cyan">Ver Catálogo</a>
+          <a href="#tracking" class="btn-pill btn-orange">Rastrear Envío</a>
         </div>
       </div>
-      <div class="carousel-item item-2">
-        <div class="carousel-content container">
-          <h1>Casas Modulares Inteligentes</h1>
-          <p>Integración domótica total y diseño premium en Costa Rica.</p>
-          <div class="hero-buttons">
-            <a href="#catalogo" class="btn-pill btn-cyan">Ver Viviendas</a>
-            <a href="https://wa.me/50672429342" target="_blank" class="btn-pill btn-orange">Cotizar Ahora</a>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item item-3">
-        <div class="carousel-content container">
-          <h1>Vehículos Avanzados</h1>
-          <p>Autonomía extendida y la última tecnología para Costa Rica.</p>
-          <div class="hero-buttons">
-            <a href="#catalogo" class="btn-pill btn-cyan">Ver Modelos</a>
-            <a href="https://wa.me/50672429342" target="_blank" class="btn-pill btn-orange">Asesoría Directa</a>
-          </div>
-        </div>
+      <div class="hero-image">
+        <!-- Reemplaza con la imagen real del barco sin fondo o rectangular limpia -->
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=800&auto=format&fit=crop" alt="Barco de Carga">
       </div>
     </div>
   </section>
 
-  <!-- 3. CATÁLOGO FONDO BLANCO (Las 3 categorías solicitadas) -->
+  <!-- CATÁLOGO (4 Items en Fondo Blanco) -->
   <section id="catalogo" class="catalogo-section">
     <div class="container">
       <h2>Catálogo de Soluciones Sostenibles</h2>
       <div class="product-grid">
         
-        <!-- 1. Vehículos Híbridos y eléctricos -->
+        <!-- Tarjeta 1 -->
         <div class="product-card">
           <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Vehículos Híbridos y Eléctricos">
           <h3>Vehículos Híbridos y eléctricos</h3>
-          <p>Vehículos de última generación con máxima eficiencia, autonomía y diseño aerodinámico.</p>
+          <p>Máxima eficiencia, autonomía y diseño aerodinámico.</p>
           <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20Vehículos%20Híbridos%20y%20eléctricos" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
-        <!-- 2. Smarthome casas modulares -->
+        <!-- Tarjeta 2 -->
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Smarthome Casas Modulares">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Smarthome casas modulares">
           <h3>Smarthome casas modulares</h3>
-          <p>Viviendas prefabricadas de lujo con integración domótica total, paneles de cristal y rápida instalación.</p>
+          <p>Lujo, domótica total y rápida instalación en tu terreno.</p>
           <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20una%20Smarthome%20casa%20modular" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
-        <!-- 3. Estaciones y cargadores eléctricos -->
+        <!-- Tarjeta 3 -->
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Estaciones y Cargadores Eléctricos">
+          <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=400&auto=format&fit=crop" alt="Estaciones y cargadores">
           <h3>Estaciones y cargadores eléctricos</h3>
-          <p>Soluciones de carga rápida residenciales y comerciales para una movilidad 100% eléctrica y eficiente.</p>
+          <p>Soluciones de carga rápida residenciales y comerciales.</p>
           <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20Estaciones%20y%20cargadores%20eléctricos" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=400&auto=format&fit=crop" alt="Paneles Solares">
+          <h3>Paneles Solares y Energía</h3>
+          <p>Kits de energía e independencia energética total.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20quiero%20cotizar%20el%20precio%20de%20Paneles%20Solares" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 4. IMPORTACIÓN PERSONALIZADA -->
+  <!-- IMPORTACIÓN PERSONALIZADA -->
   <section class="importacion-personalizada">
     <div class="container">
       <h3>¿No encuentras lo que buscas?</h3>
@@ -483,62 +437,24 @@
     </div>
   </section>
 
-  <!-- 5. TRACKING BAR -->
+  <!-- TRACKING BAR -->
   <section id="tracking" class="tracking">
     <div class="container">
       <h2>Rastrea Tu Envío Internacional</h2>
       <div class="tracking-form">
-        <input type="text" placeholder="Ingrese número de guía o contenedor..." class="tracking-input">
+        <input type="text" placeholder="Ingrese número de guía..." class="tracking-input">
         <button class="btn-pill btn-orange" style="border:none; cursor:pointer;">Rastrear</button>
       </div>
-      <div class="tracking-steps">
-        <p>1. Pedido ➔ 2. Carga ➔ 3. Aduanas ➔ 4. Entregas</p>
-      </div>
     </div>
   </section>
 
-  <!-- 6. CONTACTO & FOOTER -->
-  <section id="contacto" class="contacto">
-    <div class="container contact-grid">
-      <div class="contact-item">
-        <h4>Ubicación</h4>
-        <p>Paseo de las Flores, Heredia</p>
-      </div>
-      <div class="contact-item">
-        <h4>Contacto Directo</h4>
-        <a href="https://wa.me/50672429342" target="_blank">+506 72429342</a><br>
-        <a href="mailto:info@electroriginc.cr">info@electroriginc.cr</a>
-      </div>
-      <div class="contact-item">
-        <h4>Atención</h4>
-        <p>Agente Ejecutivo Comercial</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 ElectrOriginc. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- SCRIPT PARA CARRUSEL Y MENÚ MÓVIL -->
+  <!-- SCRIPT MENÚ MÓVIL -->
   <script>
     function toggleMenu() {
       if (window.innerWidth <= 768) {
         document.getElementById('mobile-menu').classList.toggle('active');
       }
     }
-
-    let currentSlide = 0;
-    const totalSlides = document.querySelectorAll('.carousel-item').length;
-    
-    function showSlide(index) {
-      currentSlide = (index + totalSlides) % totalSlides;
-      document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
-    }
-
-    setInterval(() => showSlide(currentSlide + 1), 6000); 
   </script>
 
 </body>
