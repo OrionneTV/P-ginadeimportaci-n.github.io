@@ -111,26 +111,22 @@
       color: var(--cyan);
     }
 
-    /* 2. HERO SECTION CON ILUSTRACIÓN DE BARCO DE IMPORTACIÓN */
+    /* 2. HERO SECTION CON LA FOTO REAL DEL BARCO A LA DERECHA */
     .hero {
       background-color: var(--bg-hero);
       background-image: 
         radial-gradient(circle at 80% 40%, rgba(0, 210, 255, 0.12) 0%, transparent 50%),
-        linear-gradient(to right, rgba(8, 26, 50, 0.98) 0%, rgba(8, 26, 50, 0.85) 45%, rgba(8, 26, 50, 0.4) 100%);
-      padding: 70px 0 80px;
+        linear-gradient(to right, rgba(8, 26, 50, 0.98) 0%, rgba(8, 26, 50, 0.85) 45%, rgba(8, 26, 50, 0.3) 100%),
+        url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center right;
+      padding: 95px 0 105px;
       color: var(--white);
       position: relative;
     }
 
-    .hero-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
     .hero-content {
-      max-width: 540px;
+      max-width: 580px;
     }
 
     .hero h1 {
@@ -151,20 +147,6 @@
     .hero-buttons {
       display: flex;
       gap: 16px;
-    }
-
-    .hero-visual {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-visual svg {
-      width: 100%;
-      max-width: 520px;
-      height: auto;
-      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
     }
 
     .btn-pill {
@@ -194,7 +176,7 @@
       color: var(--white);
     }
 
-    /* 3. CATALOGO CON FOTOS REALES */
+    /* 3. CATALOGO CON LAS 4 FOTOS Y TEXTOS EXACTOS DE TU IMAGEN */
     .catalogo {
       padding: 70px 0 80px;
       background-color: var(--white);
@@ -386,13 +368,6 @@
 
     /* RESPONSIVE */
     @media (max-width: 992px) {
-      .hero-layout {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-buttons {
-        justify-content: center;
-      }
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -456,9 +431,9 @@
     </div>
   </header>
 
-  <!-- 2. HERO CON ILUSTRACIÓN DE BARCO DE IMPORTACIÓN -->
+  <!-- 2. HERO CON FOTO REAL DEL BARCO -->
   <section class="hero" id="inicio">
-    <div class="container hero-layout">
+    <div class="container">
       <div class="hero-content">
         <h1>Importaciones directas</h1>
         <p>Movilidad - Tecnología - Innovación.</p>
@@ -467,103 +442,53 @@
           <a href="#tracking" class="btn-pill btn-orange">Rastreo Envío</a>
         </div>
       </div>
-      
-      <!-- Ilustración del Barco Portacontenedores de Importación -->
-      <div class="hero-visual">
-        <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#081a32" stop-opacity="0.9"/>
-            </linearGradient>
-            <linearGradient id="hullGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#0f172a"/>
-              <stop offset="50%" stop-color="#1e293b"/>
-              <stop offset="100%" stop-color="#0f172a"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="430" cy="170" rx="140" ry="70" fill="none" stroke="#00d2ff" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.4"/>
-          <ellipse cx="430" cy="170" rx="110" ry="110" fill="none" stroke="#00d2ff" stroke-width="1" opacity="0.2"/>
-          <line x1="330" y1="130" x2="480" y2="210" stroke="#00d2ff" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
-          <circle cx="330" cy="130" r="4" fill="#00d2ff" opacity="0.8"/>
-          <circle cx="480" cy="210" r="4" fill="#00d2ff" opacity="0.8"/>
-          <circle cx="450" cy="120" r="3" fill="#00d2ff" opacity="0.6"/>
-
-          <path d="M 120 250 C 220 220 380 220 560 260 L 580 320 L 100 320 Z" fill="url(#oceanGrad)"/>
-          <path d="M 280 255 C 330 248 370 248 420 255" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-          <path d="M 240 265 C 320 258 400 258 480 268" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-
-          <path d="M 210 245 L 490 230 L 460 270 C 400 280 270 280 230 265 Z" fill="url(#hullGrad)"/>
-          <path d="M 225 244 L 485 231" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
-
-          <rect x="250" y="215" width="40" height="15" fill="#f97316" rx="1"/>
-          <rect x="295" y="215" width="40" height="15" fill="#0284c7" rx="1"/>
-          <rect x="340" y="215" width="40" height="15" fill="#dc2626" rx="1"/>
-          <rect x="385" y="215" width="40" height="15" fill="#16a34a" rx="1"/>
-          <rect x="430" y="215" width="35" height="15" fill="#facc15" rx="1"/>
-          
-          <rect x="260" y="198" width="40" height="15" fill="#0284c7" rx="1"/>
-          <rect x="305" y="198" width="40" height="15" fill="#ea580c" rx="1"/>
-          <rect x="350" y="198" width="40" height="15" fill="#facc15" rx="1"/>
-          <rect x="395" y="198" width="40" height="15" fill="#0284c7" rx="1"/>
-          
-          <rect x="280" y="181" width="40" height="15" fill="#dc2626" rx="1"/>
-          <rect x="325" y="181" width="40" height="15" fill="#16a34a" rx="1"/>
-          <rect x="370" y="181" width="40" height="15" fill="#ea580c" rx="1"/>
-
-          <rect x="440" y="175" width="28" height="40" fill="#f8fafc" rx="2"/>
-          <rect x="444" y="182" width="20" height="6" fill="#0284c7"/>
-          <line x1="454" y1="175" x2="454" y2="160" stroke="#f8fafc" stroke-width="2"/>
-          <circle cx="454" cy="158" r="3" fill="#00d2ff"/>
-        </svg>
-      </div>
     </div>
   </section>
 
-  <!-- 3. CATÁLOGO CON FOTOS REALES DE ALTA CALIDAD -->
+  <!-- 3. CATALOGO CON LAS 4 FOTOS EXACTAS -->
   <section class="catalogo" id="catalogo">
     <div class="container">
       <h2>Catálogo de Soluciones Sostenibles</h2>
       <div class="product-grid">
 
-        <!-- 1. Vehículos Híbridos y eléctricos -->
+        <!-- 1. Sleek EV Sedan -->
         <div class="product-card">
           <div class="product-image-container">
-            <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=600&auto=format&fit=crop" alt="Vehículos Híbridos y eléctricos">
+            <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=600&auto=format&fit=crop" alt="Sleek EV Sedan">
           </div>
-          <h3>Vehículos Híbridos y eléctricos</h3>
-          <p>Máxima eficiencia, autonomía y diseño aerodinámico de última generación.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20Vehículos%20Híbridos%20y%20eléctricos" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
+          <h3>Sleek EV Sedan</h3>
+          <p>Vehículos eléctricos de alto rendimiento, tecnología autónoma y máxima eficiencia.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20del%20Sleek%20EV%20Sedan" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
-        <!-- 2. Casas modulares inteligentes -->
+        <!-- 2. Smart Modular Home -->
         <div class="product-card">
           <div class="product-image-container">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600&auto=format&fit=crop" alt="Casas modulares inteligentes">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600&auto=format&fit=crop" alt="Smart Modular Home">
           </div>
-          <h3>Casas modulares inteligentes</h3>
-          <p>Lujo, domótica total, paneles de cristal y rápida instalación en tu terreno.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20Casas%20modulares%20inteligentes" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
+          <h3>Smart Modular Home</h3>
+          <p>Viviendas prefabricadas de lujo con integración domótica total y rápida instalación.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20la%20Smart%20Modular%20Home" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
-        <!-- 3. Estaciones y cargadores eléctricos -->
+        <!-- 3. Dual Wallbox EV Charger -->
         <div class="product-card">
           <div class="product-image-container">
-            <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=600&auto=format&fit=crop" alt="Estaciones y cargadores eléctricos">
+            <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=600&auto=format&fit=crop" alt="Dual Wallbox EV Charger">
           </div>
-          <h3>Estaciones y cargadores eléctricos</h3>
-          <p>Soluciones de carga rápida residenciales y comerciales para movilidad eléctrica.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20Estaciones%20y%20cargadores%20eléctricos" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
+          <h3>Dual Wallbox EV Charger</h3>
+          <p>Estación de carga residencial rápida y eficiente para múltiples vehículos eléctricos.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20del%20Dual%20Wallbox%20EV%20Charger" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
-        <!-- 4. Estaciones de energía solar con panel y estación portátil -->
+        <!-- 4. Solar Energy Station -->
         <div class="product-card">
           <div class="product-image-container">
-            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=600&auto=format&fit=crop" alt="Estaciones de energía solar">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=600&auto=format&fit=crop" alt="Solar Energy Station">
           </div>
-          <h3>Estaciones de energía solar con panel y estación portátil</h3>
-          <p>Generadores solares y bancos de baterías de ciclo profundo para respaldo continuo.</p>
-          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20Estaciones%20de%20energía%20solar" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
+          <h3>Solar Energy Station</h3>
+          <p>Kits de energía solar y almacenamiento inteligente para independencia energética total.</p>
+          <a href="https://wa.me/50672429342?text=Hola,%20deseo%20cotizar%20el%20precio%20de%20la%20Solar%20Energy%20Station" target="_blank" class="btn-card">Escríbenos para cotizar el precio</a>
         </div>
 
       </div>
