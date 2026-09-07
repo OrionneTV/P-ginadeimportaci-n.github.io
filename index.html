@@ -111,22 +111,29 @@
       color: var(--cyan);
     }
 
-    /* 2. HERO SECTION CON LA FOTO REAL DEL BARCO A LA DERECHA */
+    /* 2. HERO SECTION CON FOTO CLARA DEL BARCO A LA DERECHA */
     .hero {
       background-color: var(--bg-hero);
       background-image: 
-        radial-gradient(circle at 80% 40%, rgba(0, 210, 255, 0.12) 0%, transparent 50%),
-        linear-gradient(to right, rgba(8, 26, 50, 0.98) 0%, rgba(8, 26, 50, 0.85) 45%, rgba(8, 26, 50, 0.3) 100%),
+        linear-gradient(to right, rgba(8, 26, 50, 0.98) 0%, rgba(8, 26, 50, 0.85) 50%, rgba(8, 26, 50, 0.3) 100%),
         url('https://images.unsplash.com/photo-1586528116311-ad8ed7f66909?q=80&w=1920&auto=format&fit=crop');
       background-size: cover;
-      background-position: center right;
+      background-position: center;
       padding: 95px 0 105px;
       color: var(--white);
       position: relative;
     }
 
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
     .hero-content {
       max-width: 580px;
+      z-index: 2;
     }
 
     .hero h1 {
@@ -176,7 +183,7 @@
       color: var(--white);
     }
 
-    /* 3. CATALOGO CON LAS 4 FOTOS Y TEXTOS EXACTOS DE TU IMAGEN */
+    /* 3. CATALOGO CON FOTOS FIJAS Y PERFECTAS */
     .catalogo {
       padding: 70px 0 80px;
       background-color: var(--white);
@@ -394,7 +401,7 @@
 </head>
 <body>
 
-  <!-- 1. HEADER -->
+  <!-- 1. HEADER (SIN CARRITO) -->
   <header>
     <div class="container nav-container">
       <a href="#" class="logo-container">
@@ -424,16 +431,13 @@
         <a href="#cuenta" aria-label="Cuenta">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </a>
-        <a href="https://wa.me/50672429342" target="_blank" aria-label="WhatsApp Pedidos">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        </a>
       </div>
     </div>
   </header>
 
   <!-- 2. HERO CON FOTO REAL DEL BARCO -->
   <section class="hero" id="inicio">
-    <div class="container">
+    <div class="container hero-layout">
       <div class="hero-content">
         <h1>Importaciones directas</h1>
         <p>Movilidad - Tecnología - Innovación.</p>
@@ -445,7 +449,7 @@
     </div>
   </section>
 
-  <!-- 3. CATALOGO CON LAS 4 FOTOS EXACTAS -->
+  <!-- 3. CATALOGO CON LAS 4 FOTOS REALES Y EXACTAS -->
   <section class="catalogo" id="catalogo">
     <div class="container">
       <h2>Catálogo de Soluciones Sostenibles</h2>
@@ -474,7 +478,7 @@
         <!-- 3. Dual Wallbox EV Charger -->
         <div class="product-card">
           <div class="product-image-container">
-            <img src="https://images.unsplash.com/photo-1664188289459-f9c313a286dc?q=80&w=600&auto=format&fit=crop" alt="Dual Wallbox EV Charger">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=600&auto=format&fit=crop" alt="Dual Wallbox EV Charger">
           </div>
           <h3>Dual Wallbox EV Charger</h3>
           <p>Estación de carga residencial rápida y eficiente para múltiples vehículos eléctricos.</p>
@@ -515,7 +519,7 @@
     </div>
   </section>
 
-  <!-- 6. CONTACTO & COPYRIGHT -->
+  <!-- 6. CONTACTO & FOOTER -->
   <footer class="footer-section" id="contacto">
     <div class="container footer-grid">
       <div class="footer-col">
