@@ -1,195 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElectroOriginc - Movilidad, Tecnología e Innovación</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f7fa;
-      color: #222;
-    }
-
-    /* 🔹 Barra de navegación */
-    header {
-      background-color: #002b5b;
-      color: white;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* 🔹 Banner principal */
-    .banner {
-      background: url('cargo_ship_banner.jpg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .banner h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    .banner p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-    .banner button {
-      background-color: #00aaff;
-      border: none;
-      color: white;
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-    .banner button:hover {
-      background-color: #0088cc;
-    }
-
-    /* 🔹 Catálogo de soluciones */
-    .catalogo {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .catalogo h2 {
-      color: #002b5b;
-      margin-bottom: 30px;
-    }
-    .productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background-color: white;
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .card h3 {
-      color: #002b5b;
-      margin: 10px 0;
-    }
-    .card p {
-      font-size: 0.9em;
-      color: #555;
-    }
-    .card button {
-      background-color: #ff7f00;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    /* 🔹 Sección de cotización */
-    .cotizacion {
-      background-color: #e8f0ff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .cotizacion button {
-      background-color: #ff7f00;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-
-    /* 🔹 Footer */
-    footer {
-      background-color: #002b5b;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h2>ElectroOriginc</h2>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Catálogo</a>
-      <a href="#">Certificaciones</a>
-      <a href="#">Movilidad</a>
-      <a href="#">Tracking</a>
-      <a href="#">Contactos</a>
-    </nav>
-  </header>
-
-  <section class="banner">
-    <h1>Importaciones Directas</h1>
-    <p>Movilidad • Tecnología • Innovación</p>
-    <button>Ver Catálogo</button>
-    <button>Rastrea Envío</button>
-  </section>
-
-  <section class="catalogo">
-    <h2>Catálogo de Soluciones Sostenibles</h2>
-    <div class="productos">
-      <div class="card">
-        <img src="ev_sedan.jpg" alt="EV Sedan">
-        <h3>Sleek EV Sedan</h3>
-        <p>Diseño limpio y eficiente. Compatible con todas las redes de carga eléctrica.</p>
-        <button>Ver Catálogo</button>
-      </div>
-      <div class="card">
-        <img src="modular_home.jpg" alt="Modular Home">
-        <h3>Smart Modular Home</h3>
-        <p>Casa prefabricada con materiales sostenibles y diseño modular.</p>
-        <button>Ver Catálogo</button>
-      </div>
-      <div class="card">
-        <img src="ev_charger.jpg" alt="EV Charger">
-        <h3>Dual Wallbox EV Charger</h3>
-        <p>Diseño compacto para garaje o exterior. Carga doble para vehículos eléctricos.</p>
-        <button>Ver Catálogo</button>
-      </div>
-      <div class="card">
-        <img src="solar_station.jpg" alt="Solar Station">
-        <h3>Solar Energy Station</h3>
-        <p>Mayor eficiencia energética con batería integrada y sistema de monitoreo.</p>
-        <button>Ver Catálogo</button>
-      </div>
+<section class="catalogo">
+  <h2>Catálogo de Soluciones Sostenibles</h2>
+  <div class="productos">
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2020/03/19/17/55/electric-car-4948696_1280.jpg" alt="EV Sedan">
+      <h3>Sleek EV Sedan</h3>
+      <p>Diseño limpio y eficiente. Compatible con todas las redes de carga eléctrica.</p>
+      <button>Ver Catálogo</button>
     </div>
-  </section>
-
-  <section class="cotizacion">
-    <p>¿No encuentras lo que buscas? Servicio de importación personalizada.</p>
-    <button>Solicitar Cotización Especial</button>
-    <br><br>
-    <button style="background-color:#00aaff;">Rastrea Tu Envío Internacional</button>
-  </section>
-
-  <footer>
-    <p>© 2026 ElectroOriginc - Todos los derechos reservados</p>
-  </footer>
-
-</body>
-</html>
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2021/03/09/09/19/modular-home-6081523_1280.jpg" alt="Modular Home">
+      <h3>Smart Modular Home</h3>
+      <p>Casa prefabricada con materiales sostenibles y diseño modular.</p>
+      <button>Ver Catálogo</button>
+    </div>
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2022/03/15/09/33/ev-charger-7069842_1280.jpg" alt="EV Charger">
+      <h3>Dual Wallbox EV Charger</h3>
+      <p>Diseño compacto para garaje o exterior. Carga doble para vehículos eléctricos.</p>
+      <button>Ver Catálogo</button>
+    </div>
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/solar-panels-1297710_1280.jpg" alt="Solar Station">
+      <h3>Solar Energy Station</h3>
+      <p>Mayor eficiencia energética con batería integrada y sistema de monitoreo.</p>
+      <button>Ver Catálogo</button>
+    </div>
+  </div>
+</section>
